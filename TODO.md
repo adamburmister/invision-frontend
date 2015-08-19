@@ -22,10 +22,10 @@
 [ ] How does post list change? Remove grid icon?
 
 ## Build
-[ ] Setup Gulp
-[ ] Setup Sass
-[ ] Setup JSPM
-[ ] Setup Babel
+[X] Setup Gulp
+[X] Setup Sass
+[X] Setup JSPM
+[X] Setup Babel
 [?] Setup Falcor server? Extra credit :)
 
 ## Framework
