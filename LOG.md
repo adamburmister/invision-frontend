@@ -9,7 +9,7 @@
 - I've been wanting to learn a couple new technlogies recently: diving more into
   React, Alt.JS (Flux implementation), Reactive.JS (not related to React),
   and Falcor (Netflix's JSON Graph).
-  
+
   Since I want a project to learn and test these new concepts on I think I will kill
   two birds with one stone... this will slow my submision down, but given (when I asked)
   there was no time restriction I think this should be ok (please forgive me otherwise).
@@ -24,3 +24,7 @@
 
 - Writing the first HTML mockup, using BEM notation (not sure what you guys prefer,
   but can refactor later easily enough).
+
+- Added a base Gulp project task with Sass, live-reload, dist-build, etc
+
+- Added JSPM, Babel for ES6 transpiling, and React/Redux packages

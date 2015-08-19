@@ -4,7 +4,8 @@ System.config({
   "babelOptions": {
     "optional": [
       "runtime"
-    ]
+    ],
+    "blacklist": []
   },
   "paths": {
     "*": "*.js",
@@ -21,7 +22,9 @@ System.config({
     "pixi.js": "npm:pixi.js@3.0.6",
     "react": "npm:react@0.14.0-beta3",
     "react-redux": "npm:react-redux@0.9.0",
+    "react-router": "npm:react-router@1.0.0-beta3",
     "redux": "npm:redux@1.0.1",
+    "redux-react-router": "npm:redux-react-router@0.4.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -225,6 +228,12 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.1",
       "redux": "npm:redux@1.0.0-rc"
     },
+    "npm:react-router@1.0.0-beta3": {
+      "invariant": "npm:invariant@2.1.0",
+      "keymirror": "npm:keymirror@0.1.1",
+      "qs": "npm:qs@2.4.1",
+      "warning": "npm:warning@1.0.2"
+    },
     "npm:react@0.14.0-beta3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "envify": "npm:envify@3.4.0",
@@ -330,6 +339,9 @@ System.config({
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:warning@1.0.2": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:xtend@2.1.2": {

@@ -79,7 +79,9 @@
     "dependencies": {
       "react": "npm:react@^0.14.0-beta3",
       "react-redux": "npm:react-redux@^0.9.0",
-      "redux": "npm:redux@^1.0.1"
+      "react-router": "npm:react-router@^1.0.0-beta3",
+      "redux": "npm:redux@^1.0.1",
+      "redux-react-router": "npm:redux-react-router@^0.4.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
