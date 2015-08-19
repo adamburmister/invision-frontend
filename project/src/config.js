@@ -21,6 +21,7 @@ System.config({
     "core-js": "npm:core-js@0.9.15",
     "pixi.js": "npm:pixi.js@3.0.6",
     "react": "npm:react@0.14.0-beta3",
+    "react-dom": "npm:react-dom@0.14.0-beta3",
     "react-redux": "npm:react-redux@0.9.0",
     "react-router": "npm:react-router@1.0.0-beta3",
     "redux": "npm:redux@1.0.1",
@@ -222,6 +223,10 @@ System.config({
       "minimist": "npm:minimist@0.0.8",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "through2": "npm:through2@0.4.2"
+    },
+    "npm:react-dom@0.14.0-beta3": {
+      "fbjs": "npm:fbjs@0.1.0-alpha.4",
+      "react": "npm:react@0.14.0-beta3"
     },
     "npm:react-redux@0.9.0": {
       "invariant": "npm:invariant@2.1.0",

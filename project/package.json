@@ -78,6 +78,7 @@
     },
     "dependencies": {
       "react": "npm:react@^0.14.0-beta3",
+      "react-dom": "npm:react-dom@^0.14.0-beta3",
       "react-redux": "npm:react-redux@^0.9.0",
       "react-router": "npm:react-router@^1.0.0-beta3",
       "redux": "npm:redux@^1.0.1",
