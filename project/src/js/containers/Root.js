@@ -7,7 +7,7 @@ class Root extends React.Component {
   render() {
     return (
       <div>
-        /* Header navigation */
+        {/* Header navigation */}
         <header class="page">
           <nav class="page__top-nav">
             <a href="/" class="logo">simplysocial</a>
@@ -33,11 +33,11 @@ class Root extends React.Component {
                     <a href="#">Settings</a>
                   </li>
                 </ul>
-              </div>// .account
-            </div>// .right
+              </div>{/* .account */}
+            </div>{/* .right */}
           </nav>
 
-          /* Hero */
+          {/* Hero */}
           <div class="hero">
             <div class="hero__new">
               <input type="text" placeholder="What's on your mind?" />
@@ -55,10 +55,10 @@ class Root extends React.Component {
                 <a href="#view-grid">Grid</a>
               </div>
             </nav>
-          </div>// .hero
+          </div>{/* .hero */}
         </header>
 
-        /* Posts list */
+        {/* Posts list */}
         <section class="posts posts--list-view">
 
           <article class="post">
@@ -88,13 +88,13 @@ class Root extends React.Component {
                 <div class="post-content">
                   Great way to start the week. Thanks for sharing!
                 </div>
-              </div>// .post-reply
+              </div>{/* .post-reply */}
 
               <div class="post-reply-form">
                 <input type="text" placeholder="Reply&hellip;" />
               </div>
-            </div>// .post-replies
-          </article>// .post
+            </div>{/* .post-replies */}
+          </article>{/* .post */}
 
         </section>
 
