@@ -9,17 +9,22 @@ $hero-nav-link-color: #fff;
   background-size: cover;
 
   .container {
-    @include span-columns(6);
-    @include shift(4);
+    @include outer-container();
   }
 }
 
 .hero-content {
-  margin: 150px 0;
+  @include shift(4);
+  @include span-columns(6);
+  
+  margin-top: 150px;
+  margin-bottom: 150px;
   background-color: $link-color--primary;
 }
 
 .hero__nav {
+  @include shift(4);
+  @include span-columns(6);
 
   a {
     color: $hero-nav-link-color;
