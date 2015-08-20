@@ -1,3 +1,11 @@
 header.page {
   background: #eee;
 }
+
+div.container {
+  @include outer-container;
+}
+
+.right {
+  float: right;
+}

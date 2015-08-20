@@ -5,7 +5,7 @@ export default class PostsList extends React.Component {
 
   render() {
     return (
-      <section className="posts posts--list-view">
+      <section className="posts-list posts-list--list-view">
         <Post />
         <Post />
       </section>

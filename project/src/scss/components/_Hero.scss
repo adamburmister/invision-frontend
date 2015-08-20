@@ -1,0 +1,42 @@
+$hero-height: 425px;
+$hero-nav-link-color: #fff;
+
+.hero {
+  @include row();
+
+  height: $hero-height;
+  background: #eee url(/img/hero-bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+
+  .container {
+    @include span-columns(6);
+    @include shift(4);
+  }
+}
+
+.hero-content {
+  margin: 150px 0;
+  background-color: $link-color--primary;
+}
+
+.hero__nav {
+
+  a {
+    color: $hero-nav-link-color;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px;
+
+    margin-left: 40px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.selected {
+      border-bottom: 4px solid $link-color--primary;
+    }
+  }
+
+}

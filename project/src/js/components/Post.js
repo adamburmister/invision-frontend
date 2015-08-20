@@ -11,7 +11,7 @@ export default class Post extends React.Component {
           <time className="post-age" datetime="2011-07-22T13:59:47-04:00">3m</time>
         </div>
 
-        <img src="#" className="avatar" />
+        <img src="#" className="avatar" width="30" height="30" />
         <a href="#samsoffes" rel="author">Sam Soffes</a>
 
         <div className="post-content">
@@ -26,7 +26,7 @@ export default class Post extends React.Component {
               <time className="post-age" datetime="2011-07-22T13:59:47-04:00">1h</time>
             </div>
 
-            <img src="#" className="avatar" />
+            <img src="#" className="avatar" width="30" height="30" />
             <a href="#jeffbridges" rel="author">Jeff Bridges</a>
             <div className="post-content">
               Great way to start the week. Thanks for sharing!

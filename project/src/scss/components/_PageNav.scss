@@ -1,0 +1,20 @@
+.page-nav {
+  background-color: $page-nav-background-color;
+
+  &__logo {
+    @include span-columns(2);
+  }
+
+  .avatar {
+    background-color: #fff;
+  }
+
+  .right {
+    @include span-columns(12);
+    text-align: right;
+  }
+
+  .dropdown {
+    display: none;
+  }
+}
