@@ -6,10 +6,13 @@ var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var neat = require('node-neat').includePaths;
+var bourbon = require('node-bourbon').includePaths;
 
 var sassOptions = {
   errLogToConsole: true,
-  outputStyle: 'expanded'
+  outputStyle: 'expanded',
+  includePaths: ['scss'].concat(neat, bourbon)
 };
 
 // Compile SASS with sourcemaps + livereload.

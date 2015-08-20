@@ -2,4 +2,5 @@
 project/dist
 project/node_modules
 project/src/css
-project/src/lib/npm
+project/src/lib
+project/src/lib

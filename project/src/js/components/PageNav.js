@@ -4,15 +4,15 @@ export default class PageNav extends React.Component {
 
   render() {
     return (
-      <nav class="page__top-nav">
-        <a href="/" class="logo">simplysocial</a>
-        <div class="right">
-          <a href="#create-new-post" class="page__top-nav__new">New Post</a>
+      <nav className="page__top-nav">
+        <a href="/" className="logo">simplysocial</a>
+        <div className="right">
+          <a href="#create-new-post" className="page__top-nav__new">New Post</a>
           <input type="search" name="q" />
-          <div class="page__top-nav__account">
-            <a href="#" class="avatar">
+          <div className="page__top-nav__account">
+            <a href="#" className="avatar">
               <img src="avatar.png" />
-              <span class="caret"></span>
+              <span className="caret"></span>
             </a>
             <ul>
               <li>

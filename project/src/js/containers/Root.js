@@ -9,7 +9,7 @@ class Root extends React.Component {
   render() {
     return (
       <div>
-        <header class="page">
+        <header className="page">
           <PageNav />
           <Hero />
         </header>
