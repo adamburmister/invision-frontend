@@ -5,21 +5,27 @@ export default class Post extends React.Component {
   render() {
     return (
       <article className="post post--collapsed post--has-replies post--has-photo post--has-video">
-        <img src="/img/avatars/sam.jpg" className="avatar" width="40" height="40" />
+        <div className="post-padding">
+          <img src="/img/avatars/sam.jpg" className="avatar" width="40" height="40" />
 
-        <a href="#samsoffes" rel="author" className="post-author">Sam Soffes</a>
+          <a href="#samsoffes" rel="author" className="post-author">Sam Soffes</a>
 
-        <div className="post-content">
-          How to Get Inspired: the Right Way - Designmodo <a href="http://bit.ly/1IE4uJc">bit.ly/1IE4uJc</a> Good stuff from <a href="#">@designmodo</a>!
+          <div className="post-content">
+            <p>How to Get Inspired: the Right Way - Designmodo <a href="http://bit.ly/1IE4uJc">bit.ly/1IE4uJc</a> Good stuff from <a href="#">@designmodo</a>!</p>
+          </div>
+
+          <a href="#" className="post-collapsible-toggle">Expand <span class="caret"></span></a>
+
+          <div className="post-utils">
+            <a href="#reply">Reply</a>
+            <a href="#like">Like</a>
+            <time className="post-age" datetime="2011-07-22T13:59:47-04:00">3m</time>
+          </div>
         </div>
 
-        <a href="#" className="post-collapsible-toggle">Expand <span class="caret"></span></a>
-
-        <div className="post-utils">
-          <a href="#reply">Reply</a>
-          <a href="#like">Like</a>
-          <time className="post-age" datetime="2011-07-22T13:59:47-04:00">3m</time>
-        </div>
+        <a href="#" className="post-thumbnail">
+          <img src="/img/photos/beach-thumbnail.jpg" />
+        </a>
 
         <div className="post-collapsible">
           <div className="post post-reply">

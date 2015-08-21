@@ -1,13 +1,14 @@
 $post-padding: 25px;
 $post-link-color: $icon-color;
 $post-link-color--hover: $link-color--primary;
+$post-left-spacing: 80px;
 
 .post {
   position: relative;
   border: 1px solid #dee1e5;
   border-radius: 5px;
+  overflow: hidden;
   margin-bottom: 25px;
-  padding: 25px 25px 25px 80px;
   -webkit-font-smoothing: antialiased;
 
   color: #70767f;
@@ -24,7 +25,11 @@ $post-link-color--hover: $link-color--primary;
 
   .avatar {
     float: left;
-    margin-left: -55px;
+    margin-left: 25px - $post-left-spacing;
+  }
+
+  .post-padding {
+    padding: 25px 25px 25px $post-left-spacing;
   }
 
   .post-utils {
@@ -53,6 +58,13 @@ $post-link-color--hover: $link-color--primary;
   .post-content {
     margin-top: 5px;
     margin-bottom: 15px;
+  }
+
+  .post-thumbnail {
+    img {
+      max-width: 100%;
+      float: left;
+    }
   }
 
   a.post-collapsible-toggle {
