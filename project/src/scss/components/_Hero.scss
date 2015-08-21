@@ -6,7 +6,7 @@ $hero-bg-color: #00b286;
 
 .hero {
   // @include row();
-  min-height: $hero-height;
+  // min-height: $hero-height;
   background: $page-nav-background-color url(/img/hero-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 
@@ -59,7 +59,7 @@ $hero-bg-color: #00b286;
   > a {
     padding: 0 10px;
     letter-spacing: 0.1em;
-    margin-left: 40px;
+    margin-left: 7%; /* roughly 40px at full-width, allows us to be a bit more liquid */
 
     &:first-child {
       margin-left: 0;

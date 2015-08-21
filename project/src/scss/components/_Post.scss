@@ -114,12 +114,14 @@ $post-padding: 25px;
       top: $post-padding;
       right: $post-padding;
     }
-    &:not(.post-list--has-replies) {
-      & .post-footer {
+    &.post--has-photo:not(.post--has-replies) {
+      .post-footer {
+        // A post without replies
         margin-top: 0;
+        height: 0;
       }
-      & .post-thumbnail {
-        margin-bottom: -20px;
+      .post-thumbnail {
+        margin-bottom: -21px;
       }
     }
   }

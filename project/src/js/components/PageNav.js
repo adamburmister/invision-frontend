@@ -20,16 +20,16 @@ export default class PageNav extends React.Component {
               </a>
               <ul className="dropdown">
                 <li>
-                  <a href="#">Profile</a>
+                  <a href="#profile">Profile</a>
                 </li>
                 <li>
-                  <a href="#">Followers</a>
+                  <a href="#profile/followers">Followers</a>
                 </li>
                 <li>
-                  <a href="#">Following</a>
+                  <a href="#profile/following">Following</a>
                 </li>
                 <li>
-                  <a href="#">Settings</a>
+                  <a href="#settings">Settings</a>
                 </li>
               </ul>
             </div>{/* /.account */}
