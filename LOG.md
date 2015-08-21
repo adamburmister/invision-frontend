@@ -7,6 +7,9 @@
 - Adding Neat so I have access to Sass grid mixins (I could roll my own, but a hassle,
   and there's rarely a reason to roll your own in real life)
 
+- Adding Scss for the page nav, hero, hero nav, footer. Still need to extract the
+  icons to SVG.
+
 ## Wednesday 6pm
 
 - So I'm at the point where I have the bones ready to go, so I'm looking at how

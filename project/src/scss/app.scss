@@ -1,4 +1,4 @@
-$visual-grid: true;
+// $visual-grid: true;
 
 @import "bourbon";
 @import "grid-settings";
@@ -32,7 +32,7 @@ a {
   text-decoration: none;
 }
 
-.avatar {
+img.avatar {
   border-radius: 5px;
   background-color: #999;
 }

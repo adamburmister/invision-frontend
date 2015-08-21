@@ -15,7 +15,7 @@ export default class PageNav extends React.Component {
 
             <div className="page-nav__account">
               <a href="#" className="avatar">
-                <img src="avatar.png" width="30" height="30" />
+                <img src="/img/avatars/jessica.jpg" width="30" height="30" className="avatar" />
                 <span className="caret"></span>
               </a>
               <ul className="dropdown">

@@ -27,6 +27,23 @@ $post-link-color--hover: $link-color--primary;
     margin-left: -55px;
   }
 
+  .post-utils {
+    color: $icon-color;
+    a {
+      margin-right: 20px;
+      font-size: 14px;
+      color: $icon-color;
+
+      &:hover {
+        color: $icon-color--hover;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
   .post-author {
     font-size: $h4-font-size;
     color: $body-color;
@@ -38,8 +55,11 @@ $post-link-color--hover: $link-color--primary;
     margin-bottom: 15px;
   }
 
-  .post-collapsible-toggle {
+  a.post-collapsible-toggle {
     font-size: 12px;
+    &:hover {
+      color: $body-color;
+    }
   }
 
   .post-collapsible {
