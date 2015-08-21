@@ -8,16 +8,16 @@ export default class Hero extends React.Component {
       <div className="hero hero--home">
         <div className="container">
 
-          <form className="hero-content" action="#">
+          <form className="hero-content" action="#add">
             <input type="text" placeholder="What’s on your mind?" />
-            <a href="#addphoto" className="hero__new__add-photo">Add Photo</a>
-            <a href="#addvideo" className="hero__new__add-video">Add Video</a>
+            <a href="#add/photo" className="hero__new__add-photo">Add Photo</a>
+            <a href="#add/video" className="hero__new__add-video">Add Video</a>
           </form>
 
           <nav className="hero__nav">
-            <a href="#all" className="selected">All Posts</a>
-            <a href="#photos">Photos</a>
-            <a href="#videos">Videos</a>
+            <a href="#posts" className="selected">All Posts</a>
+            <a href="#posts/photos">Photos</a>
+            <a href="#posts/videos">Videos</a>
 
             <PostsListViewSwitcher />
           </nav>
