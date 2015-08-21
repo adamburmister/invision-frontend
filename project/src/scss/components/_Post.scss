@@ -30,7 +30,8 @@ $post-padding: 25px;
   }
 
   .post-padding {
-    display: inline-block;
+    float: left;
+    width: 100%;
     padding: 25px 25px 15px $post-padding-left;
   }
 
@@ -76,7 +77,7 @@ $post-padding: 25px;
     margin-left: -$post-padding-left;
 
     img {
-      max-width: 100%;
+      width: 100%;
       float: left;
     }
 
