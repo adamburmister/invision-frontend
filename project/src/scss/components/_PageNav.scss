@@ -5,6 +5,12 @@ $dropdown-border-radius: 5px;
 $page-nav-padding: 15px;
 
 .page-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  
+  // border-top: 3px solid $link-color--primary;
+
   background-color: $page-nav-background-color;
   padding: $page-nav-padding;
   // height: 60px; // TODO: remove

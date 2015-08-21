@@ -6,7 +6,6 @@ $hero-bg-color: #00b286;
 
 .hero {
   // @include row();
-
   min-height: $hero-height;
   background: #eee url(/img/hero-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
@@ -20,11 +19,11 @@ $hero-bg-color: #00b286;
   @include shift(4);
   @include span-columns(6);
   @include omega();
-  
-  margin-top: 123px;
+
+  margin-top: 173px;
   margin-bottom: 95px;
   height: 156px;
-  padding: 30px;
+  padding: 40px 30px 30px 30px;
   background-color: transparentize($hero-bg-color, 0.3);
   border-radius: 4px;
 
@@ -47,9 +46,10 @@ $hero-bg-color: #00b286;
     font-weight: bold;
     font-family: $font-family-open-sans;
     text-transform: uppercase;
-    padding: 15px 10px;
+    padding: 15px 10px 0;
     letter-spacing: 0.1em;
     float: left;
+    height: 50px;
     margin-left: 40px;
 
     &:first-child {
