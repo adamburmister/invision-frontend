@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from '../components/Post';
+import Post from 'js/components/Post';
 
 export default class PostsList extends React.Component {
 
@@ -14,17 +14,18 @@ export default class PostsList extends React.Component {
 
     return (
       <section className={classes.join(' ')}>
-        <Post expanded={true} />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        {this.props.posts.map(function(post, i) {
+          return (<Post data={post}
+                        thumbnailUrl="/img/photos/beach-thumbnail.jpg"
+                        key={i} />)
+        })}
       </section>
     )
   }
 
 }
+
+PostsList.propTypes = { posts: React.PropTypes.array };
+PostsList.defaultProps = { posts: [{}, {}, {}, {}] };
+
+export default PostsList;

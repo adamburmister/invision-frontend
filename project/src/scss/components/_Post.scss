@@ -1,7 +1,8 @@
-$post-padding: 25px;
 $post-link-color: $icon-color;
 $post-link-color--hover: $link-color--primary;
-$post-left-spacing: 80px;
+$post-padding-left: 80px;
+$post-padding-bottom: 15px;
+$post-padding: 25px;
 
 .post {
   position: relative;
@@ -25,11 +26,16 @@ $post-left-spacing: 80px;
 
   .avatar {
     float: left;
-    margin-left: 25px - $post-left-spacing;
+    margin-left: 25px - $post-padding-left;
   }
 
   .post-padding {
-    padding: 25px 25px 25px $post-left-spacing;
+    display: inline-block;
+    padding: 25px 25px 15px $post-padding-left;
+  }
+
+  .post-footer {
+    margin-top: 10px;
   }
 
   .post-utils {
@@ -56,14 +62,26 @@ $post-left-spacing: 80px;
   }
 
   .post-content {
-    margin-top: 5px;
-    margin-bottom: 15px;
+    p {
+      margin: 5px 0;
+    }
   }
 
   .post-thumbnail {
+    @include clearfix;
+    background-color: $icon-color;
+    display: inline-block;
+    margin-top: 15px;
+    margin-right: -$post-padding;
+    margin-left: -$post-padding-left;
+
     img {
       max-width: 100%;
       float: left;
+    }
+
+    &:last-child {
+      margin-bottom: -15px;
     }
   }
 
@@ -94,6 +112,14 @@ $post-left-spacing: 80px;
       position: absolute;
       top: $post-padding;
       right: $post-padding;
+    }
+    &:not(.post-list--has-replies) {
+      & .post-footer {
+        margin-top: 0;
+      }
+      & .post-thumbnail {
+        margin-bottom: -20px;
+      }
     }
   }
 }

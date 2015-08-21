@@ -1,4 +1,5 @@
 import React from 'react';
+import PostsListViewSwitcher from 'js/components/PostsListViewSwitcher';
 
 export default class Hero extends React.Component {
 
@@ -18,10 +19,7 @@ export default class Hero extends React.Component {
             <a href="#photos">Photos</a>
             <a href="#videos">Videos</a>
 
-            <div className="right view-type">
-              <a href="#view-list">List</a>
-              <a href="#view-grid">Grid</a>
-            </div>
+            <PostsListViewSwitcher />
           </nav>
         </div>
       </div>
