@@ -8,7 +8,7 @@ export default class PageNav extends React.Component {
         <div className="container">
           <a href="/" className="page-nav__logo"><b>simply</b>social</a>
 
-          <div className="right">
+          <form className="right">
             <a href="#create-new-post" className="page-nav__btn-new">New Post</a>
 
             <input type="search" name="q" autofocus className="page-nav__search" />
@@ -33,7 +33,7 @@ export default class PageNav extends React.Component {
                 </li>
               </ul>
             </div>{/* /.account */}
-          </div>{/* /.right */}
+          </form>{/* /.right */}
         </div>{/* /.container */}
       </nav>
     )

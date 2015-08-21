@@ -1,0 +1,17 @@
+.posts-list {
+  padding-top: 50px;
+}
+
+.posts-list--list-view {
+  @include shift(4);
+  @include span-columns(6);
+}
+
+.posts-list--grid-view {
+  .post {
+    @include span-columns(4);
+    &:nth-child(3n + 1) {
+      @include shift(1);
+    }
+  }
+}

@@ -113,8 +113,13 @@ $page-nav-padding: 15px;
     background: transparent;
     border: 1px solid #44474b;
     border-radius: 4px;
+    outline: none;
     color: #fff;
     font-size: $h4-font-size;
+
+    &:focus, &:active {
+      border-color: #ccc;
+    }
   }
 
   .right {

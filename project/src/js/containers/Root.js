@@ -13,7 +13,9 @@ class Root extends React.Component {
           <PageNav />
           <Hero />
         </header>
-        <PostsList />
+        <div className="container">
+          <PostsList view="grid" />
+        </div>
         <PageFooter />
       </div>
     );

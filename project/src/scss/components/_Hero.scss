@@ -5,7 +5,7 @@ $hero-nav-height: 50px;
 $hero-bg-color: #00b286;
 
 .hero {
-  @include row();
+  // @include row();
 
   min-height: $hero-height;
   background: #eee url(/img/hero-bg.jpg) no-repeat 50% 50%;
@@ -19,7 +19,8 @@ $hero-bg-color: #00b286;
 .hero-content {
   @include shift(4);
   @include span-columns(6);
-
+  @include omega();
+  
   margin-top: 123px;
   margin-bottom: 95px;
   height: 156px;
@@ -36,6 +37,8 @@ $hero-bg-color: #00b286;
 .hero__nav {
   @include shift(4);
   @include span-columns(6);
+  @include omega();
+
   height: $hero-nav-height;
 
   a {
@@ -44,7 +47,7 @@ $hero-bg-color: #00b286;
     font-weight: bold;
     font-family: $font-family-open-sans;
     text-transform: uppercase;
-    padding: 15px;
+    padding: 15px 10px;
     letter-spacing: 0.1em;
     float: left;
     margin-left: 40px;

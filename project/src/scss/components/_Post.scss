@@ -1,5 +1,76 @@
+$post-padding: 25px;
+$post-link-color: $icon-color;
+$post-link-color--hover: $link-color--primary;
+
 .post {
-  border: 1px solid #ccc;
-  margin: 10px;
-  padding: 10px;
+  position: relative;
+  border: 1px solid #dee1e5;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  padding: 25px 25px 25px 80px;
+  -webkit-font-smoothing: antialiased;
+
+  color: #70767f;
+  font-size: $body-font-size;
+  font-family: $font-family-open-sans;
+  line-height: 24px;
+
+  a {
+    color: $post-link-color;
+    &:hover {
+      color: $post-link-color--hover;
+    }
+  }
+
+  .avatar {
+    float: left;
+    margin-left: -55px;
+  }
+
+  .post-author {
+    font-size: $h4-font-size;
+    color: $body-color;
+    margin-bottom: 5px;
+  }
+
+  .post-content {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .post-collapsible-toggle {
+    font-size: 12px;
+  }
+
+  .post-collapsible {
+    height: auto;
+  }
+}
+
+// When a post is collapsed...
+.post--collapsed {
+  .post-collapsible {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+// List view...
+.posts-list--list-view {
+  .post {
+    .post-utils {
+      position: absolute;
+      top: $post-padding;
+      right: $post-padding;
+    }
+  }
+}
+// Grid view...
+.posts-list--grid-view {
+  .post {
+    .post-utils {
+      position: relative;
+      float: right;
+    }
+  }
 }
