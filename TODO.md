@@ -2,7 +2,7 @@
 
 ## HTML
 [X] Semantic HTML for All Posts List
-[ ] Semantic HTML for All Posts Grid
+[X] Semantic HTML for All Posts Grid
 [ ] Semantic HTML for Modal
 [ ] Semantic HTML for Settings
 [ ] Semantic HTML for Create new message Modal
@@ -11,10 +11,12 @@
 [ ] Semantic HTML for Profile / Following
 
 ## Sass
-[ ] Sass variables file
-[ ] Sass Layout, Header
-[ ] Sass All Posts List
-[ ] Sass All Posts Grid
+[X] Sass variables file
+[X] Sass Layout, Header
+[x] Sass All Posts List
+[X] Sass All Posts Grid
+
+[ ] Extract Icons from PSDs
 
 ## Responsive
 [ ] Breakpoints or Fluid down to mobile
@@ -29,6 +31,10 @@
 [?] Setup Falcor server? Extra credit :)
 
 ## Framework
-[ ] Decide upon React components. Document decision
 [ ] Learn Redux.JS
 [ ] Learn ReactiveJS - how can it help? Document decision
+
+## React
+[ ] Switch between grid and list
+[ ] Router for Posts and Settings
+[ ] Add Photos, Videos views

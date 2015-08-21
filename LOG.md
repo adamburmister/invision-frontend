@@ -10,6 +10,9 @@
 - Adding Scss for the page nav, hero, hero nav, footer. Still need to extract the
   icons to SVG.
 
+- Finished enough of the Posts list that I can proceed to start backing it with
+  React data flows. I'll tackle that tomorrow.
+
 ## Wednesday 6pm
 
 - So I'm at the point where I have the bones ready to go, so I'm looking at how
