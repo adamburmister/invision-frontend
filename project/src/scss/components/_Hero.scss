@@ -1,10 +1,13 @@
 $hero-height: 425px;
-$hero-nav-link-color: #fff;
+$hero-nav-link-color: #bec3cc;
+$hero-nav-link-color--selected: #fff;
+$hero-nav-height: 50px;
+$hero-bg-color: #00b286;
 
 .hero {
   @include row();
 
-  height: $hero-height;
+  min-height: $hero-height;
   background: #eee url(/img/hero-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 
@@ -16,32 +19,79 @@ $hero-nav-link-color: #fff;
 .hero-content {
   @include shift(4);
   @include span-columns(6);
-  
-  margin-top: 150px;
-  margin-bottom: 150px;
-  background-color: $link-color--primary;
+
+  margin-top: 123px;
+  margin-bottom: 95px;
+  height: 156px;
+  padding: 30px;
+  background-color: transparentize($hero-bg-color, 0.3);
+  border-radius: 4px;
+
+  a {
+    color: #fff;
+    opacity: 0.5;
+  }
 }
 
 .hero__nav {
   @include shift(4);
   @include span-columns(6);
+  height: $hero-nav-height;
 
   a {
     color: $hero-nav-link-color;
     font-size: 12px;
     font-weight: bold;
+    font-family: $font-family-open-sans;
     text-transform: uppercase;
     padding: 15px;
-
+    letter-spacing: 0.1em;
+    float: left;
     margin-left: 40px;
 
     &:first-child {
       margin-left: 0;
     }
 
-    &.selected {
+    &.selected, &:focus, &:active {
       border-bottom: 4px solid $link-color--primary;
+      color: $hero-nav-link-color--selected;
     }
   }
 
+}
+
+// Home Hero
+.hero--home {
+  .hero-content {
+    -webkit-font-smoothing: antialiased;
+
+    input {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 30px;
+      font-family: $font-family-open-sans;
+      font-weight: $font-weight-light;
+      width: 100%;
+      margin-bottom: 30px;
+
+      &:active, &:focus {
+        outline: none;
+      }
+
+      @include placeholder {
+        color: #fff;
+        opacity: 0.5;
+        font-weight: lighter;
+      }
+    }
+
+    a {
+      margin-left: 50px;
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
 }

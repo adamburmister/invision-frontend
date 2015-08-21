@@ -5,8 +5,8 @@ export default class PageFooter extends React.Component {
   render() {
     return (
       <footer className="page">
+        <hr />
         <div className="container">  
-          <hr />
           <nav>
             <a href="#about-us">About Us</a>
             <a href="#support">Support</a>

@@ -7,11 +7,11 @@ export default class Hero extends React.Component {
       <div className="hero hero--home">
         <div className="container">
 
-          <div className="hero-content">
-            <input type="text" placeholder="What's on your mind?" />
+          <form className="hero-content" action="#">
+            <input type="text" placeholder="What’s on your mind?" />
             <a href="#addphoto" className="hero__new__add-photo">Add Photo</a>
             <a href="#addvideo" className="hero__new__add-video">Add Video</a>
-          </div>
+          </form>
 
           <nav className="hero__nav">
             <a href="#all" className="selected">All Posts</a>

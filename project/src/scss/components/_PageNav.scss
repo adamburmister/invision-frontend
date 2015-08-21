@@ -1,12 +1,120 @@
+$dropdown-font-size: 12px;
+$dropdown-bg-color: #f4f5f7;
+$dropdown-border-radius: 5px;
+
+$page-nav-padding: 15px;
+
 .page-nav {
   background-color: $page-nav-background-color;
+  padding: $page-nav-padding;
+  // height: 60px; // TODO: remove
+  // overflow: hidden; // TODO: remove
 
   &__logo {
     @include span-columns(2);
+    -webkit-font-smoothing: antialiased;
+    font-family: $font-family-proxima-nova;
+    font-size: 19px;
+    color: #bec3cc;
+    line-height: 35px; // this pushes out the nav-bar height, so we need to pull the margin down
+    margin-bottom: -5px; // room for the odd line-height on logo text
+
+    // Using the non-semantic B for the colour difference
+    b {
+      font-weight: normal;
+      color: #70767f;
+    }
   }
 
-  .avatar {
-    background-color: #fff;
+  &__account {
+    float: right;
+
+    // Pull up and down to give us a larger hit area for hovering, this means
+    // we can use pure CSS for the drop down menu
+    margin-top: -$page-nav-padding;
+    margin-bottom: -$page-nav-padding;
+    padding-top: $page-nav-padding;
+    padding-bottom: $page-nav-padding;
+
+    position: relative;
+
+    .avatar {
+      display: inline-block;
+      img {
+        float: left;
+      }
+    }
+
+    .caret {
+      display: inline-block;
+      width: 28px;
+    }
+
+    .dropdown {
+      position: absolute;
+      right: -5px;
+      top: 55px;
+      display: none;
+      width: 96px;
+      // height: 100px;
+      background: $dropdown-bg-color;
+      margin: 0;
+      text-align: left;
+      border-radius: $dropdown-border-radius;
+
+      :after {
+      	bottom: 100%;
+      	right: 20%;
+      	border: solid transparent;
+      	content: " ";
+      	height: 0;
+      	width: 0;
+      	position: absolute;
+      	pointer-events: none;
+      	border-bottom-color: $dropdown-bg-color;
+      	border-width: 5px;
+      	margin-left: -5px;
+      }
+
+      a {
+        color: #70767f;
+        font-size: $dropdown-font-size;
+        display: block;
+        padding: 0 16px;
+        line-height: 30px;
+      }
+
+      &, li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        border-top: 1px solid #dee1e5;
+        &:first-of-type {
+          border-top: none;
+        }
+      }
+    }
+    &:hover {
+      .dropdown {
+        display: block;
+      }
+    }
+  }
+
+  // The search input box
+  &__search {
+    margin: 0 23px;
+    padding: 0 5px;
+    width: 200px;
+    line-height: 30px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid #44474b;
+    border-radius: 4px;
+    color: #fff;
+    font-size: $h4-font-size;
   }
 
   .right {
@@ -14,7 +122,4 @@
     text-align: right;
   }
 
-  .dropdown {
-    display: none;
-  }
 }

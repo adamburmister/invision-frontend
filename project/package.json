@@ -65,6 +65,8 @@
     "karma-mocha-reporter": "^1.0.2",
     "karma-sinon-chai": "^1.0.0",
     "mocha": "^2.2.5",
+    "node-bourbon": "^4.2.3",
+    "node-neat": "^1.7.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.0",
     "sassdoc": "^2.1.15"
