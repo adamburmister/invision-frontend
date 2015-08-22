@@ -95,7 +95,7 @@ $hero-bg-color: #00b286;
       border-bottom: 4px solid $link-color--primary;
     }
 
-    @include media($mobile) {
+    @include media($phone-landscape-down) {
       letter-spacing: 0;
       padding: 0 5px;
     }

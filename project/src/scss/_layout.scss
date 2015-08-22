@@ -18,10 +18,6 @@ $tablet-portrait-up: new-breakpoint(min-width $tablet-portrait);
 $tablet-landscape-up: new-breakpoint(min-width $tablet-landscape);
 $desktop-up: new-breakpoint(min-width $desktop);
 
-// $tablet-vertical: new-breakpoint(max-width 1024px);
-// $tablet-horizontal: new-breakpoint(max-width 1024px);
-$mobile: new-breakpoint(max-width 480px);
-
 header.page {
   background: #eee;
 }

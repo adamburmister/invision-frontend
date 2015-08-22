@@ -6,7 +6,7 @@ export default class PageNav extends React.Component {
     return (
       <nav className="page-nav">
         <div className="container">
-          <a href="/" className="page-nav__logo">
+          <a href="#/" className="page-nav__logo">
             <img src="/img/icons/logo.svg" width="32" height="32" className="icon" />
             <span className="page-nag__logo__text">
               <b>simply</b>social
