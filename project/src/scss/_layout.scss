@@ -1,3 +1,7 @@
+// breakpoints
+$tablet: new-breakpoint(max-width 768px);
+$mobile: new-breakpoint(max-width 480px);
+
 header.page {
   background: #eee;
 }

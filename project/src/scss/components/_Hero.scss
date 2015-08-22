@@ -105,6 +105,11 @@ $hero-bg-color: #00b286;
 
     a {
       margin-left: 50px;
+
+      img {
+        margin-right: 10px;
+      }
+
       &:first-of-type {
         margin-left: 0;
       }
