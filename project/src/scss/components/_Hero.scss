@@ -2,9 +2,11 @@ $hero-height: 425px;
 $hero-nav-link-color: #bec3cc;
 $hero-nav-link-color--selected: #fff;
 $hero-nav-height: 50px;
+$page-nav-height: 60px;
 $hero-bg-color: #00b286;
 
 .hero {
+  margin-top: $hero-nav-height;
   // @include row();
   // min-height: $hero-height;
   background: $page-nav-background-color url(/img/hero-bg.jpg) no-repeat 50% 50%;
@@ -20,8 +22,8 @@ $hero-bg-color: #00b286;
   @include span-columns(6);
   @include omega();
 
-  margin-top: 173px;
-  margin-bottom: 95px;
+  margin-top: 130px;
+  margin-bottom: 100px;
   height: 156px;
   padding: 40px 30px 30px 30px;
   background-color: transparentize($hero-bg-color, 0.3);

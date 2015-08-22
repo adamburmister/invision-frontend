@@ -5,6 +5,7 @@ $page-nav-padding: 12px;
 
 .page-nav {
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 100;
 
@@ -37,7 +38,7 @@ $page-nav-padding: 12px;
 
     // The text
     .page-nag__logo__text {
-      margin-top: 7px;
+      margin-top: 8px; // offset from the logo icon by design
     }
 
     // Using the non-semantic B for the colour difference
