@@ -1,7 +1,8 @@
 $hero-height: 425px;
 $hero-nav-link-color: #bec3cc;
 $hero-nav-link-color--selected: #fff;
-$hero-nav-height: 50px;
+$hero-nav-border-height: 4px;
+$hero-nav-height: 50px - $hero-nav-border-height;
 $page-nav-height: 60px;
 $hero-bg-color: #00b286;
 
@@ -53,7 +54,7 @@ $hero-bg-color: #00b286;
   @include span-columns(6);
   @include omega();
 
-  height: $hero-nav-height;
+  // height: $hero-nav-height;
 
   @include media($tablet-landscape-down) {
     @include shift(3);
@@ -73,8 +74,8 @@ $hero-bg-color: #00b286;
     font-family: $font-family-open-sans;
     text-transform: uppercase;
     float: left;
-    height: 50px;
     line-height: $hero-nav-height;
+    border-bottom: $hero-nav-border-height solid transparent;
 
     &.selected, &:focus, &:active, &:hover {
       color: $hero-nav-link-color--selected;
@@ -92,7 +93,7 @@ $hero-bg-color: #00b286;
     }
 
     &.selected, &:focus, &:active {
-      border-bottom: 4px solid $link-color--primary;
+      border-color: $link-color--primary;
     }
 
     @include media($phone-landscape-down) {
