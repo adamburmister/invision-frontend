@@ -25,7 +25,9 @@ class Post extends React.Component {
         <div className="post post-reply">
           <div className="links">
             <a href="#reply">Reply</a>
-            <a href="#like">Like</a>
+            <a href="#like">
+              <img src="/img/icons/like.svg" />
+            </a>
             <time className="post-age" datetime="2011-07-22T13:59:47-04:00">1h</time>
           </div>
 
@@ -85,8 +87,12 @@ class Post extends React.Component {
             {expandToggleEl}
 
             <div className="post-utils">
-              <a href="#reply">Reply</a>
-              <a href="#like">Like</a>
+              <a href="#reply">
+                <img src="/img/icons/reply.svg" width="13" height="13" />              
+              </a>
+              <a href="#like">
+                <img src="/img/icons/like.svg" width="13" height="13" />
+              </a>
               <time className="post-age" datetime="2011-07-22T13:59:47-04:00">3m</time>
             </div>
           </div>
