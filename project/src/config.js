@@ -19,11 +19,13 @@ System.config({
     "babel": "npm:babel-core@5.5.6",
     "babel-runtime": "npm:babel-runtime@5.5.6",
     "core-js": "npm:core-js@0.9.15",
+    "nmn/react-timeago": "github:nmn/react-timeago@master",
     "pixi.js": "npm:pixi.js@3.0.6",
     "react": "npm:react@0.14.0-beta3",
     "react-dom": "npm:react-dom@0.14.0-beta3",
     "react-redux": "npm:react-redux@0.9.0",
     "react-router": "npm:react-router@1.0.0-beta3",
+    "react-timeago": "npm:react-timeago@2.2.1",
     "redux": "npm:redux@1.0.1",
     "redux-react-router": "npm:redux-react-router@0.4.0",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -117,6 +119,11 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.1",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
+    "npm:core-js@1.1.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
     "npm:core-util-is@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
@@ -169,7 +176,7 @@ System.config({
       "acorn": "npm:acorn@1.2.2"
     },
     "npm:fbjs@0.1.0-alpha.4": {
-      "core-js": "npm:core-js@1.1.0",
+      "core-js": "npm:core-js@1.1.1",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1",
@@ -238,6 +245,10 @@ System.config({
       "keymirror": "npm:keymirror@0.1.1",
       "qs": "npm:qs@2.4.1",
       "warning": "npm:warning@1.0.2"
+    },
+    "npm:react-timeago@2.2.1": {
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "react": "npm:react@0.14.0-beta3"
     },
     "npm:react@0.14.0-beta3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",

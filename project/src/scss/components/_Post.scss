@@ -3,13 +3,17 @@ $post-link-color--hover: $link-color--primary;
 $post-padding-left: 80px;
 $post-padding-bottom: 15px;
 $post-padding: 25px;
+$post-border-color: #dee1e5;
+$post-border-color--internal: #eef0f2;
 
 .post {
   position: relative;
-  border: 1px solid #dee1e5;
+  border: 1px solid $post-border-color;
   border-radius: 5px;
+  background-color: #fff;
   overflow: hidden;
   margin-bottom: 25px;
+  word-break: break-word;
   -webkit-font-smoothing: antialiased;
 
   color: #70767f;
@@ -31,8 +35,12 @@ $post-padding: 25px;
 
   .post-padding {
     float: left;
-    // width: 100%;
+    width: 100%;
     padding: 25px 25px 15px $post-padding-left;
+
+    &:empty {
+      padding: 0;
+    }
   }
 
   .post-footer {
@@ -62,7 +70,7 @@ $post-padding: 25px;
     margin-bottom: 5px;
   }
 
-  .post-content {
+  .post-text {
     p {
       margin: 5px 0;
     }
@@ -94,16 +102,45 @@ $post-padding: 25px;
   }
 
   .post-collapsible {
-    height: auto;
+    width: 100%; overflow: hidden; // clearfix
+    background-color: #f9fafb;
+    border-top: 1px solid $post-border-color--internal;
+    // Keep it shut, but use max-height so we can transition it
+    max-height: 0;
+	  overflow: hidden;
+    opacity: 0;
+    @include transition(opacity 0.2s ease-in-out 0s, max-height 0.2s ease-in 0s);
   }
-}
+  // The expanded state
+  &:not(.post--collapsed) {
+    .post-collapsible {
+      display: block;
+      max-height: 500px;
+      opacity: 1;
+      overflow: scroll;
+    }
+  }
 
-// When a post is collapsed...
-.post--collapsed {
-  .post-collapsible {
-    height: 0;
-    overflow: hidden;
+  .post-reply {
+    border-bottom: 1px solid $post-border-color--internal;
   }
+
+  .post-reply-form {
+    padding: $post-padding;
+    float: left;
+    width: 100%;
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 1px solid $post-border-color;
+      padding: 0 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+  }
+
+
 }
 
 // List view...
@@ -132,6 +169,9 @@ $post-padding: 25px;
     .post-utils {
       position: relative;
       float: right;
+    }
+    .post-thumbnail:last-child {
+      margin-bottom: 0; // show the utils below images
     }
   }
 }

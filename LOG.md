@@ -8,6 +8,14 @@
   but have enough to wire up to React and Redux now... that's all relatively new
   to me so I'm spending a couple hours playing around learning that before applying
   to this project.
+  I will do a basic React implementation, then a Flux, then a Redux.
+
+- Oh damn, just tried populating some test data and I realise now my naieve grid
+  won't do the job with floats (of course)... will need to implement a IE9 friendly
+  masonry system (I miss flexbox)...
+  - A CSS3 Columns layout works fine, but the display order is wrong as it goes
+    vertically across columns, not horizontally as in mock ups
+  - I may have to resort to the masonry JS to get it done as per design
 
 ## Thursday
 

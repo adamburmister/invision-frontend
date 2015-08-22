@@ -7,59 +7,87 @@ class Post extends React.Component {
     this.state = props;
   }
 
-  handleExpandToggleClick() {
+  handleExpandToggleClick(e) {
+    e.preventDefault();
     this.setState({ isCollapsed: !this.state.isCollapsed });
   }
 
-  renderThumbnail(includeVideoPlayButton=false) {
+  handleLikeClick(e) {
+    e.preventDefault();
+    this.setState({ isLiked: !this.state.isLiked });
+  }
+
+  renderContent(data) {
+    let thumbnailEl;
+    if(data.content.photo && data.content.photo.thumbnailUrl) {
+      thumbnailEl = this.renderThumbnail(data.content.photo.thumbnailUrl, false);
+    }
+
+    return (
+      <div className="post-content">{/* not happy about extra element */}
+        <a href={data.author.handle} rel="author" className="post-author">
+          <img src={data.author.avatarUrl} className="avatar" width="40" height="40" />
+          {data.author.name}
+        </a>
+
+        <div className="post-text" dangerouslySetInnerHTML={{ __html: data.content.text }}></div>
+
+        {thumbnailEl}
+      </div>
+    )
+  }
+
+  renderThumbnail(thumbnailUrl, includeVideoPlayButton=false) {
     return (
       <a href="#" className="post-thumbnail">
-        <img src={this.state.thumbnailUrl} />
+        <img src={thumbnailUrl} />
       </a>
     );
   }
 
-  renderReplies() {
+  renderPostUtils(age='3m') {
+    return (
+      <div className="post-utils">
+        <a href="#reply" onClick={(e) => this.handleExpandToggleClick(e)}>
+          <img src="/img/icons/reply.svg" width="13" height="13" />
+        </a>
+        <a href="#like" onClick={(e) => this.handleLikeClick(e)}>
+          <img src="/img/icons/like.svg" width="13" height="13" />
+        </a>
+        <time className="post-age" datetime="2011-07-22T13:59:47-04:00">{age}</time>
+      </div>
+    );
+  }
+
+  renderReplies(replies) {
     return (
       <div className="post-collapsible">
-        <div className="post post-reply">
-          <div className="links">
-            <a href="#reply">Reply</a>
-            <a href="#like">
-              <img src="/img/icons/like.svg" />
-            </a>
-            <time className="post-age" datetime="2011-07-22T13:59:47-04:00">1h</time>
-          </div>
+        {replies.map((reply) => {
+          return (
+            <div className="post-padding post-reply">{this.renderContent(reply)}</div>
+          );
+        })}
 
-          <img src="/img/avatars/sam.jpg" className="avatar" width="30" height="30" />
-          <a href="#jeffbridges" rel="author">Jeff Bridges</a>
-          <div className="post-content">
-            Great way to start the week. Thanks for sharing!
-          </div>
-        </div>{/* .post-reply */}
-
-        <div className="post-reply-form">
+        <form className="post-reply-form">
           <input type="text" placeholder="Reply&hellip;" />
-        </div>
+        </form>
       </div>
     );
   }
 
   render() {
     // Optional elements to be built up and included in render
-    let thumbnailEl;
+    let postContentEl;
     let expandToggleEl;
-    let repliesEl;
 
     // Collect CSS classes and elements
     let cssClasses = ['post'];
     if(this.state.isCollapsed) {
       cssClasses.push('post--collapsed');
     }
-    if(this.state.replies && this.state.replies.length) {
+    if(this.state.data.replies.length) {
       cssClasses.push('post--has-replies');
-      expandToggleEl = (<a href="#" className="post-collapsible-toggle" onClick={this.handleExpandToggleClick.bind(this)}>Expand <span class="caret"></span></a>);
-      repliesEl = this.renderReplies();
+      expandToggleEl = (<a href="#" className="post-collapsible-toggle" onClick={(e) => this.handleExpandToggleClick(e)}>Expand <span class="caret"></span></a>);
     }
     if(this.state.thumbnailUrl) {
       if(this.state.isVideo) {
@@ -67,38 +95,22 @@ class Post extends React.Component {
       } else {
         cssClasses.push('post--has-photo');
       }
-      thumbnailEl = this.renderThumbnail(this.state.isVideo);
     }
+
+    postContentEl = this.renderContent(this.state.data);
 
     return (
       <article className={cssClasses.join(' ')}>
         <div className="post-padding">
-          <img src="/img/avatars/sam.jpg" className="avatar" width="40" height="40" />
-
-          <a href="#samsoffes" rel="author" className="post-author">Sam Soffes</a>
-
-          <div className="post-content">
-            <p>How to Get Inspired: the Right Way - Designmodo <a href="http://bit.ly/1IE4uJc">bit.ly/1IE4uJc</a> Good stuff from <a href="#">@designmodo</a>!</p>
-          </div>
-
-          {thumbnailEl}
+          {postContentEl}
 
           <div className="post-footer">
             {expandToggleEl}
-
-            <div className="post-utils">
-              <a href="#reply">
-                <img src="/img/icons/reply.svg" width="13" height="13" />              
-              </a>
-              <a href="#like">
-                <img src="/img/icons/like.svg" width="13" height="13" />
-              </a>
-              <time className="post-age" datetime="2011-07-22T13:59:47-04:00">3m</time>
-            </div>
+            {this.renderPostUtils(this.state.data.age)}
           </div>
         </div>
 
-        {repliesEl}
+        {this.renderReplies(this.state.data.replies)}
       </article>
     )
   }
