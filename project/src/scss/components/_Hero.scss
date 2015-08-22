@@ -30,6 +30,9 @@ $hero-bg-color: #00b286;
   a {
     color: #fff;
     opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -50,7 +53,7 @@ $hero-bg-color: #00b286;
     height: 50px;
     line-height: $hero-nav-height;
 
-    &.selected, &:focus, &:active {
+    &.selected, &:focus, &:active, &:hover {
       color: $hero-nav-link-color--selected;
     }
   }

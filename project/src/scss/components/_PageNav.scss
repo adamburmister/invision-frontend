@@ -1,8 +1,7 @@
 $dropdown-font-size: 12px;
 $dropdown-bg-color: #f4f5f7;
 $dropdown-border-radius: 5px;
-
-$page-nav-padding: 15px;
+$page-nav-padding: 12px;
 
 .page-nav {
   position: fixed;
@@ -13,19 +12,33 @@ $page-nav-padding: 15px;
 
   background-color: $page-nav-background-color;
   padding: $page-nav-padding;
-  // height: 60px; // TODO: remove
-  // overflow: hidden; // TODO: remove
+
+  a {
+    height: 32px;
+    display: inline-block;
+  }
 
   &__logo {
     float: left;
-    // padding-left: $gutter;
-    // @include span-columns(2);
     -webkit-font-smoothing: antialiased;
     font-family: $font-family-proxima-nova;
     font-size: 19px;
     color: #bec3cc;
-    line-height: 35px; // this pushes out the nav-bar height, so we need to pull the margin down
-    margin-bottom: -5px; // room for the odd line-height on logo text
+    padding-right: 5px;
+
+    img, .page-nag__logo__text {
+      float: left;
+    }
+
+    // The social icon
+    img {
+      margin-right: 12px;
+    }
+
+    // The text
+    .page-nag__logo__text {
+      margin-top: 7px;
+    }
 
     // Using the non-semantic B for the colour difference
     b {
@@ -35,16 +48,13 @@ $page-nav-padding: 15px;
   }
 
   &__account {
+    position: relative;
     float: right;
 
     // Pull up and down to give us a larger hit area for hovering, this means
     // we can use pure CSS for the drop down menu
-    margin-top: -$page-nav-padding;
-    margin-bottom: -$page-nav-padding;
-    padding-top: $page-nav-padding;
-    padding-bottom: $page-nav-padding;
-
-    position: relative;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
 
     .avatar {
       display: inline-block;
@@ -61,7 +71,7 @@ $page-nav-padding: 15px;
     .dropdown {
       position: absolute;
       right: -5px;
-      top: 55px;
+      top: 45px;
       display: none;
       width: 96px;
       // height: 100px;
@@ -124,6 +134,7 @@ $page-nav-padding: 15px;
     outline: none;
     color: #fff;
     font-size: $h4-font-size;
+    vertical-align: top;
 
     &:focus, &:active {
       border-color: #ccc;
@@ -131,7 +142,6 @@ $page-nav-padding: 15px;
   }
 
   .right {
-    @include span-columns(12);
     text-align: right;
   }
 

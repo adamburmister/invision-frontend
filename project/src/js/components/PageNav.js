@@ -6,10 +6,17 @@ export default class PageNav extends React.Component {
     return (
       <nav className="page-nav">
         <div className="container">
-          <a href="/" className="page-nav__logo"><b>simply</b>social</a>
+          <a href="/" className="page-nav__logo">
+            <img src="/img/icons/logo.svg" width="32" height="32" className="icon" />
+            <span className="page-nag__logo__text">
+              <b>simply</b>social
+            </span>
+          </a>
 
           <form className="right">
-            <a href="#create-new-post" className="page-nav__btn-new">New Post</a>
+            <a href="#create-new-post" className="page-nav__btn-new">
+              <img src="/img/icons/new-message.svg" width="32" height="32" className="icon" />
+            </a>
 
             <input type="search" name="q" autofocus className="page-nav__search" />
 
