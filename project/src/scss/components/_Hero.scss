@@ -43,6 +43,7 @@ $hero-bg-color: #00b286;
   a {
     color: #fff;
     opacity: 0.5;
+    @include transition(opacity 0.1s ease-in);
     &:hover {
       opacity: 1;
     }
@@ -76,7 +77,6 @@ $hero-bg-color: #00b286;
     float: left;
     line-height: $hero-nav-height;
     border-bottom: $hero-nav-border-height solid transparent;
-
     &.selected, &:focus, &:active, &:hover {
       color: $hero-nav-link-color--selected;
     }

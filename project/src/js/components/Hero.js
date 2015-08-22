@@ -10,11 +10,11 @@ export default class Hero extends React.Component {
 
           <form className="hero-content" action="#add">
             <input type="text" placeholder="What’s on your mind?" />
-            <a href="#add/photo" className="hero__new__add-photo">
+            <a href="#posts/new/photo" className="hero__new__add-photo">
               <img src="/img/icons/camera.svg" height="13" />
               Add Photo
             </a>
-            <a href="#add/video" className="hero__new__add-video">
+            <a href="#posts/new/video" className="hero__new__add-video">
               <img src="/img/icons/video.svg" height="13" />
               Add Video
             </a>

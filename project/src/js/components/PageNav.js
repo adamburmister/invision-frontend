@@ -14,7 +14,7 @@ export default class PageNav extends React.Component {
           </a>
 
           <form className="right">
-            <a href="#create-new-post" className="page-nav__btn-new">
+            <a href="#posts/new" className="page-nav__btn-new">
               <img src="/img/icons/new-message.svg" width="32" height="32" className="icon" />
             </a>
 

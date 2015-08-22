@@ -12,7 +12,8 @@ class PostsListViewSwitcher extends React.Component {
     this.state = props;
   }
 
-  handleClick(newView) {
+  handleClick(e, newView) {
+    e.preventDefault();
     this.setState({ view: newView });
   }
 
@@ -28,8 +29,8 @@ class PostsListViewSwitcher extends React.Component {
 
     return (
       <div className="posts-list-view-switcher">
-        <a onClick={this.handleClick.bind(this, VIEW_TYPES.LIST)} href="#view-list" className={cssClasses.list}>List</a>
-        <a onClick={this.handleClick.bind(this, VIEW_TYPES.GRID)} href="#view-grid" className={cssClasses.grid}>Grid</a>
+        <a onClick={(e) => this.handleClick(e, VIEW_TYPES.LIST)} href="#view-list" className={cssClasses.list}>List</a>
+        <a onClick={(e) => this.handleClick(e, VIEW_TYPES.GRID)} href="#view-grid" className={cssClasses.grid}>Grid</a>
       </div>
     )
   }
