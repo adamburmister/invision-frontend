@@ -1,5 +1,14 @@
 # Work Log
 
+## Friday
+
+- Long week of work, now onto this :)
+
+- Have most of the CSS done for the home page. Still need to do settings, etc,
+  but have enough to wire up to React and Redux now... that's all relatively new
+  to me so I'm spending a couple hours playing around learning that before applying
+  to this project.
+
 ## Thursday
 
 - Converting the HTML mockup to React components.
