@@ -5,6 +5,12 @@
 .posts-list--list-view {
   @include shift(4);
   @include span-columns(6);
+
+  @include media($mobile) {
+    @include shift(0);
+    @include span-columns($grid-columns);
+    @include pad();
+  }
 }
 
 .posts-list--grid-view {
