@@ -1,10 +1,41 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
+/* From Modernizr */
+function whichTransitionEvent(){
+    var t;
+    var el = document.createElement('fakeelement');
+    var transitions = {
+      'transition':'transitionend',
+      'OTransition':'oTransitionEnd',
+      'MozTransition':'transitionend',
+      'WebkitTransition':'webkitTransitionEnd'
+    }
+
+    for(t in transitions){
+        if( el.style[t] !== undefined ){
+            return transitions[t];
+        }
+    }
+}
+const TRANSITION_EVENT = whichTransitionEvent();
 
 class Post extends React.Component {
 
   constructor(props) {
     super();
     this.state = props;
+  }
+
+  componentDidMount() {
+    let postCollapsibleEl = ReactDOM.findDOMNode(this).querySelector('.post-collapsible');
+
+    /* Listen for a transition! */
+    TRANSITION_EVENT && postCollapsibleEl.addEventListener(TRANSITION_EVENT, (e) => {
+      if(e.propertyName === 'max-height') {
+        this.props.onExpanded(this);
+      }
+    });
   }
 
   handleExpandToggleClick(e) {
@@ -117,7 +148,7 @@ class Post extends React.Component {
 
 }
 
-Post.propTypes = { data: React.PropTypes.object, isCollapsed: React.PropTypes.bool };
-Post.defaultProps = { data: {}, isCollapsed: true };
+Post.propTypes = { data: React.PropTypes.object, onExpanded: React.PropTypes.func, isCollapsed: React.PropTypes.bool };
+Post.defaultProps = { data: {}, isCollapsed: true, onExpanded: ()=>{} };
 
 export default Post;

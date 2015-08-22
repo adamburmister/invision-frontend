@@ -109,14 +109,13 @@ $post-border-color--internal: #eef0f2;
     max-height: 0;
 	  overflow: hidden;
     opacity: 0;
-    @include transition(opacity 0.2s ease-in-out 0s, max-height 0.2s ease-in 0s);
+    @include transition(max-height 0.2s ease-in 0s, opacity 0.2s ease-in 0s);
   }
   // The expanded state
   &:not(.post--collapsed) {
     .post-collapsible {
-      display: block;
-      max-height: 500px;
       opacity: 1;
+      max-height: 350px; // in production this wouldn't work well because of timing delays
       overflow: scroll;
     }
   }
