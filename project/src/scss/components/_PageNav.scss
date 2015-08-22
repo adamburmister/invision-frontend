@@ -39,6 +39,10 @@ $page-nav-padding: 12px;
     // The text
     .page-nag__logo__text {
       margin-top: 8px; // offset from the logo icon by design
+
+      @include media($tablet) {
+        display: none;
+      }
     }
 
     // Using the non-semantic B for the colour difference
@@ -140,10 +144,17 @@ $page-nav-padding: 12px;
     &:focus, &:active {
       border-color: #ccc;
     }
+
+    @include media($mobile) {
+      width: 35%;
+    }
   }
 
-  .right {
+  .container > .right {
     text-align: right;
+    @include media($tablet) {
+      float: none;
+    }
   }
 
 }
