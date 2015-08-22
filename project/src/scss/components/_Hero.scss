@@ -27,10 +27,15 @@ $hero-bg-color: #00b286;
   background-color: transparentize($hero-bg-color, 0.3);
   border-radius: 4px;
 
-  @include media($mobile) {
+  // Responsive Breakpoints
+  @include media($tablet-landscape-down) {
+    @include shift(3);
+    @include span-columns(8);
+  }
+  @include media($phone-landscape-down) {
     @include shift(0);
     @include span-columns($grid-columns);
-    margin-top: 40px;
+    margin-top: 0;
     margin-bottom: 0;
   }
 
@@ -50,7 +55,11 @@ $hero-bg-color: #00b286;
 
   height: $hero-nav-height;
 
-  @include media($mobile) {
+  @include media($tablet-landscape-down) {
+    @include shift(3);
+    @include span-columns(8);
+  }
+  @include media($phone-landscape-down) {
     @include shift(0);
     @include span-columns($grid-columns);
     padding-left: 10px;
@@ -117,6 +126,10 @@ $hero-bg-color: #00b286;
         color: #fff;
         opacity: 0.5;
         font-weight: lighter;
+      }
+
+      @include media($tablet-portrait-down) {
+        font-size: 20px;
       }
     }
 

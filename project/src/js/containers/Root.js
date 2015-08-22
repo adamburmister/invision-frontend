@@ -14,7 +14,7 @@ class Root extends React.Component {
           <Hero />
         </header>
         <div className="container">
-          <PostsList view="list" />
+          <PostsList view="grid" />
         </div>
         <PageFooter />
       </div>

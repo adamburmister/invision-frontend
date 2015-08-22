@@ -14,10 +14,39 @@
 }
 
 .posts-list--grid-view {
+  @include shift(1);
+  @include span-columns(14);
+
+  // @include media($phone-landscape-down) {
+  //   @include span-columns(10);
+  //   @include shift(2);
+  // }
+  @include media($phone-landscape-down) {
+    @include span-columns(14);
+    @include shift(0);
+    @include pad();
+  }
+
   .post {
-    @include span-columns(4);
-    &:nth-child(3n + 1) {
-      @include shift(1);
+    // @include omega;
+
+    @include media($tablet-landscape-up) {
+      @include span-columns(4);
+      // &:nth-child(3n + 1) {
+      //   @include shift(1);
+      // }
+    }
+    @include media($tablet-landscape-down) {
+      @include span-columns(6);
+      // &:nth-child(2n) { // every 3rd
+      //   @include shift(1);
+      // }
+    }
+    @include media($phone-landscape-down) {
+      @include span-columns($grid-columns);
+      // &:nth-child(2n + 1) {
+      //   @include shift(0);
+      // }
     }
   }
 }

@@ -40,7 +40,7 @@ $page-nav-padding: 12px;
     .page-nag__logo__text {
       margin-top: 8px; // offset from the logo icon by design
 
-      @include media($tablet) {
+      @include media($mobile) {
         display: none;
       }
     }
@@ -152,7 +152,7 @@ $page-nav-padding: 12px;
 
   .container > .right {
     text-align: right;
-    @include media($tablet) {
+    @include media($tablet-portrait-down) {
       float: none;
     }
   }

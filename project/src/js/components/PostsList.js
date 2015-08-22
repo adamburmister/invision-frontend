@@ -26,6 +26,6 @@ export default class PostsList extends React.Component {
 }
 
 PostsList.propTypes = { posts: React.PropTypes.array };
-PostsList.defaultProps = { posts: [{}, {}, {}, {}] };
+PostsList.defaultProps = { posts: [{}, {}, {}, {},{}, {}, {}, {},{}, {}, {}, {}] };
 
 export default PostsList;
