@@ -2,6 +2,11 @@ import React from 'react';
 
 export default class PageNav extends React.Component {
 
+  constructor(props) {
+    super();
+    this.state = props;
+  }
+
   render() {
     return (
       <nav className="page-nav">

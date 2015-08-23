@@ -109,9 +109,8 @@ class Post extends React.Component {
   }
 
   render() {
-    // Optional elements to be built up and included in render
-    let postContentEl;
-    let expandToggleEl;
+    let data = this.state.data;
+    let optionalExpandToggleEl;
 
     // Collect CSS classes and elements
     let cssClasses = ['post'];
@@ -121,32 +120,34 @@ class Post extends React.Component {
     if(this.state.isLiked) {
       cssClasses.push('post--liked');
     }
-    if(this.state.data.replies.length) {
+    if(data.replies.length) {
       cssClasses.push('post--has-replies');
-      expandToggleEl = (<a href="#" className="post-collapsible-toggle" onClick={(e) => this.handleExpandToggleClick(e)}>{this.state.isCollapsed ? 'Expand' : 'Collapse'} <span class="caret"></span></a>);
+      optionalExpandToggleEl = (
+        <a href="#" className="post-collapsible-toggle"
+            onClick={(e) => this.handleExpandToggleClick(e)}>
+            {this.state.isCollapsed ? 'Expand' : 'Collapse'} <span class="caret"></span>
+        </a>
+      );
     }
-    if(this.state.thumbnailUrl) {
-      if(this.state.isVideo) {
-        cssClasses.push('post--has-video');
-      } else {
-        cssClasses.push('post--has-photo');
-      }
+    if(data.content.photo.thumbnailUrl) {
+      cssClasses.push('post--has-photo');
     }
-
-    postContentEl = this.renderContent(this.state.data);
+    if(data.content.video.thumbnailUrl) {
+      cssClasses.push('post--has-video');
+    }
 
     return (
       <article className={cssClasses.join(' ')}>
         <div className="post-padding">
-          {postContentEl}
+          {this.renderContent(data)}
 
           <div className="post-footer">
-            {expandToggleEl}
-            {this.renderPostUtils(this.state.data.age)}
+            {optionalExpandToggleEl}
+            {this.renderPostUtils(data.age)}
           </div>
         </div>
 
-        {this.renderReplies(this.state.data.replies)}
+        {this.renderReplies(data.replies)}
       </article>
     )
   }

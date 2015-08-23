@@ -2,6 +2,11 @@ import React from 'react';
 
 export default class Hero extends React.Component {
 
+  constructor(props) {
+    super();
+    this.state = props;
+  }
+
   render() {
     return (
       <div className="hero hero--home">
