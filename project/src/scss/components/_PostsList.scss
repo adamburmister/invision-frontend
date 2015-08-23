@@ -1,8 +1,61 @@
 .posts-list {
   padding-top: 50px;
-  min-width: 100%;
-  min-height: 1000px;
 }
+
+.posts-hero-nav {
+  margin-top: -50px;
+  @include shift(4);
+  @include span-columns(6);
+
+  // height: $hero-nav-height;
+
+  @include media($tablet-landscape-down) {
+    @include shift(3);
+    @include span-columns(8);
+  }
+  @include media($phone-landscape-down) {
+    @include shift(0);
+    @include span-columns($grid-columns);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  a {
+    color: $hero-nav-link-color;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: $font-family-open-sans;
+    text-transform: uppercase;
+    float: left;
+    line-height: $hero-nav-height;
+    border-bottom: $hero-nav-border-height solid transparent;
+    &.selected, &:focus, &:active, &:hover {
+      color: $hero-nav-link-color--selected;
+    }
+  }
+
+  // Direct child only, since secondary util links can live on the right float
+  > a {
+    padding: 0 10px;
+    letter-spacing: 0.1em;
+    margin-left: 7%; /* roughly 40px at full-width, allows us to be a bit more liquid */
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.selected, &:focus, &:active {
+      border-color: $link-color--primary;
+    }
+
+    @include media($phone-landscape-down) {
+      letter-spacing: 0;
+      padding: 0 5px;
+    }
+  }
+
+}
+
 
 .posts-list--list-view {
   @include shift(4);
@@ -21,12 +74,9 @@
 
 .posts-list--grid-view {
   @include shift(1);
-  @include span-columns(14);
+  @include span-columns(12);
+  min-height: 500px;
 
-  // @include media($phone-landscape-down) {
-  //   @include span-columns(10);
-  //   @include shift(2);
-  // }
   @include media($phone-landscape-down) {
     @include span-columns(14);
     @include shift(0);
@@ -34,25 +84,14 @@
   }
 
   .post {
-    // @include omega;
-
     @include media($tablet-landscape-up) {
-      @include span-columns(4);
-      // &:nth-child(3n + 1) {
-      //   @include shift(1);
-      // }
+      @include span-columns(4 of 12);
     }
     @include media($tablet-landscape-down) {
-      @include span-columns(6);
-      // &:nth-child(2n) { // every 3rd
-      //   @include shift(1);
-      // }
+      @include span-columns(6 of 12);
     }
     @include media($phone-landscape-down) {
       @include span-columns($grid-columns);
-      // &:nth-child(2n + 1) {
-      //   @include shift(0);
-      // }
     }
   }
 }

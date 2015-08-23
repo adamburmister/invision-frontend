@@ -4,6 +4,9 @@ import Hero from '../components/Hero';
 import PostsList from '../components/PostsList';
 import PageFooter from '../components/PageFooter';
 
+// Mock data
+import postsMock from '../data/posts.json';
+
 class Root extends React.Component {
 
   render() {
@@ -14,7 +17,7 @@ class Root extends React.Component {
           <Hero />
         </header>
         <div className="container">
-          <PostsList view="grid" />
+          <PostsList posts={postsMock}/>
         </div>
         <PageFooter />
       </div>

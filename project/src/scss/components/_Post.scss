@@ -35,7 +35,7 @@ $post-border-color--internal: #eef0f2;
 
   .post-padding {
     float: left;
-    width: 100%;
+    // width: 100%;
     padding: 25px 25px 15px $post-padding-left;
 
     &:empty {
@@ -90,7 +90,7 @@ $post-border-color--internal: #eef0f2;
     }
 
     &:last-child {
-      margin-bottom: -15px;
+      margin-bottom: -32px;
     }
   }
 

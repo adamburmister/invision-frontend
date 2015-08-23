@@ -28,7 +28,7 @@ class Post extends React.Component {
   }
 
   componentDidMount() {
-    let postCollapsibleEl = ReactDOM.findDOMNode(this).querySelector('.post-collapsible');
+    let postCollapsibleEl = ReactDOM.findDOMNode(this.refs.postCollapsible);
 
     /* Listen for a transition! */
     TRANSITION_EVENT && postCollapsibleEl.addEventListener(TRANSITION_EVENT, (e) => {
@@ -39,8 +39,10 @@ class Post extends React.Component {
   }
 
   handleExpandToggleClick(e) {
+    this.props.onBeforeExpand(ReactDOM.findDOMNode(this));
     e.preventDefault();
     this.setState({ isCollapsed: !this.state.isCollapsed });
+    // this.props.onExpanded(this); will be triggered by the transition event in componentDidMount
   }
 
   handleLikeClick(e) {
@@ -92,7 +94,7 @@ class Post extends React.Component {
 
   renderReplies(replies) {
     return (
-      <div className="post-collapsible">
+      <div className="post-collapsible" ref="postCollapsible">
         {replies.map((reply) => {
           return (
             <div className="post-padding post-reply">{this.renderContent(reply)}</div>
@@ -116,9 +118,12 @@ class Post extends React.Component {
     if(this.state.isCollapsed) {
       cssClasses.push('post--collapsed');
     }
+    if(this.state.isLiked) {
+      cssClasses.push('post--liked');
+    }
     if(this.state.data.replies.length) {
       cssClasses.push('post--has-replies');
-      expandToggleEl = (<a href="#" className="post-collapsible-toggle" onClick={(e) => this.handleExpandToggleClick(e)}>Expand <span class="caret"></span></a>);
+      expandToggleEl = (<a href="#" className="post-collapsible-toggle" onClick={(e) => this.handleExpandToggleClick(e)}>{this.state.isCollapsed ? 'Expand' : 'Collapse'} <span class="caret"></span></a>);
     }
     if(this.state.thumbnailUrl) {
       if(this.state.isVideo) {
@@ -148,7 +153,17 @@ class Post extends React.Component {
 
 }
 
-Post.propTypes = { data: React.PropTypes.object, onExpanded: React.PropTypes.func, isCollapsed: React.PropTypes.bool };
-Post.defaultProps = { data: {}, isCollapsed: true, onExpanded: ()=>{} };
+Post.propTypes = {
+  data: React.PropTypes.object,
+  onBeforeExpand: React.PropTypes.func,
+  onExpanded: React.PropTypes.func,
+  isCollapsed: React.PropTypes.bool
+};
+Post.defaultProps = {
+  data: {},
+  isCollapsed: true,
+  onBeforeExpand: () => {},
+  onExpanded: () => {}
+};
 
 export default Post;

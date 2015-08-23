@@ -1,4 +1,4 @@
-$hero-height: 425px;
+$hero-height: 440px;
 $hero-nav-link-color: #bec3cc;
 $hero-nav-link-color--selected: #fff;
 $hero-nav-border-height: 4px;
@@ -7,6 +7,7 @@ $page-nav-height: 60px;
 $hero-bg-color: #00b286;
 
 .hero {
+  height: $hero-height;
   margin-top: $hero-nav-height;
   background: $page-nav-background-color url(/img/hero-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
@@ -20,10 +21,10 @@ $hero-bg-color: #00b286;
   @include shift(4);
   @include span-columns(6);
   @include omega();
-
+  
   margin-top: 130px;
-  margin-bottom: 100px;
-  height: 156px;
+  // margin-bottom: 130px;
+  // height: 156px;
   padding: 40px 30px 30px 30px;
   background-color: transparentize($hero-bg-color, 0.3);
   border-radius: 4px;
@@ -48,60 +49,6 @@ $hero-bg-color: #00b286;
       opacity: 1;
     }
   }
-}
-
-.hero__nav {
-  @include shift(4);
-  @include span-columns(6);
-  @include omega();
-
-  // height: $hero-nav-height;
-
-  @include media($tablet-landscape-down) {
-    @include shift(3);
-    @include span-columns(8);
-  }
-  @include media($phone-landscape-down) {
-    @include shift(0);
-    @include span-columns($grid-columns);
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  a {
-    color: $hero-nav-link-color;
-    font-size: 12px;
-    font-weight: bold;
-    font-family: $font-family-open-sans;
-    text-transform: uppercase;
-    float: left;
-    line-height: $hero-nav-height;
-    border-bottom: $hero-nav-border-height solid transparent;
-    &.selected, &:focus, &:active, &:hover {
-      color: $hero-nav-link-color--selected;
-    }
-  }
-
-  // Direct child only, since secondary util links can live on the right float
-  > a {
-    padding: 0 10px;
-    letter-spacing: 0.1em;
-    margin-left: 7%; /* roughly 40px at full-width, allows us to be a bit more liquid */
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &.selected, &:focus, &:active {
-      border-color: $link-color--primary;
-    }
-
-    @include media($phone-landscape-down) {
-      letter-spacing: 0;
-      padding: 0 5px;
-    }
-  }
-
 }
 
 // Home Hero

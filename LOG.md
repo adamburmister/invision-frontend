@@ -16,6 +16,9 @@
   - A CSS3 Columns layout works fine, but the display order is wrong as it goes
     vertically across columns, not horizontally as in mock ups
   - I may have to resort to the masonry JS to get it done as per design
+    - Masony isn't great either... as we expand the replies we have to move pieces
+      up or down... currently they shuffle left or right too (with default implementation)
+      So the CSS3 Columns is actually a pretty good solution, despite sort order.
 
 ## Thursday
 

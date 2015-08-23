@@ -1,5 +1,3 @@
-// $visual-grid: true;
-
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
@@ -15,10 +13,6 @@
 @import "components/PostsListViewSwitcher";
 @import "components/Post";
 @import "components/PageFooter";
-
-* {
-  box-sizing: border-box;
-}
 
 body {
   background-color: #fff;
@@ -38,7 +32,6 @@ img.avatar {
   border-radius: 5px;
   background-color: #999;
 }
-
 
 input {
   &:focus, &:active {

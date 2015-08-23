@@ -15,6 +15,7 @@ class PostsListViewSwitcher extends React.Component {
   handleClick(e, newView) {
     e.preventDefault();
     this.setState({ view: newView });
+    this.props.onChange(newView);
   }
 
   render() {
@@ -37,7 +38,7 @@ class PostsListViewSwitcher extends React.Component {
 
 }
 
-PostsListViewSwitcher.propTypes = { view: React.PropTypes.string };
-PostsListViewSwitcher.defaultProps = { view: VIEW_TYPES.LIST };
+PostsListViewSwitcher.propTypes = { view: React.PropTypes.string, onChange: React.PropTypes.func };
+PostsListViewSwitcher.defaultProps = { view: VIEW_TYPES.LIST, onChange: ()=>{} };
 
 export default PostsListViewSwitcher;
