@@ -16,10 +16,10 @@ class Settings extends React.Component {
 
           <fieldset>
             <legend>Account</legend>
-            <div class="settings--avatar">
+            <div className="settings--avatar">
 
             </div>
-            <div class="settings--login">
+            <div className="settings--login">
               Name
               Email
               Password
@@ -29,63 +29,70 @@ class Settings extends React.Component {
 
           <fieldset>
             <legend>Notifications</legend>
-            <p>
-              <label class="toggle-switch">
-                <input type="checkbox" /> email me when my posts are marked as favorites
-              </label>
-            </p>
-            <p>
-              <label class="toggle-switch">
-                <input type="checkbox" /> email me when I'm mentioned
-              </label>
-            </p>
-            <p>
-              <label class="toggle-switch">
-                <input type="checkbox" /> email me when I get a reply
-              </label>
-            </p>
-            <p>
-              <label class="toggle-switch">
-                <input type="checkbox" /> email me when someone follows me
-              </label>
-            </p>
+            <div className="toggle-switch">
+              <input type="checkbox" id="check1" />
+              <label htmlFor="check1"></label>
+            </div>
+            <label htmlFor="check1">email me when my posts are marked as favorites</label>
+
+            <div className="toggle-switch">
+              <input type="checkbox" id="check2" />
+              <label htmlFor="check2"></label>
+            </div>
+            <label htmlFor="check2">email me when I'm mentioned</label>
+
+            <div className="toggle-switch">
+              <input type="checkbox" id="check3" />
+              <label htmlFor="check3"></label>
+            </div>
+            <label htmlFor="check3">email me when I get a reply</label>
+
+            <div className="toggle-switch">
+              <input type="checkbox" id="check4" />
+              <label htmlFor="check4"></label>
+            </div>
+            <label htmlFor="check4">email me when someone follows me</label>
+
           </fieldset>
 
           <fieldset>
             <legend>Privacy</legend>
-            <div class="radio-group">
+            <div className="radio-group">
               <p>
-                <label class="radio">
+                <label className="radio">
                   <input type="radio" name="tagging" /> allow anyone to tag me
                 </label>
               </p>
               <p>
-                <label class="radio">
+                <label className="radio">
                   <input type="radio" name="tagging" /> only allow people I follow to tag me
                 </label>
               </p>
               <p>
-                <label class="radio">
+                <label className="radio">
                   <input type="radio" name="tagging" /> don't allow anyone to tag me
                 </label>
               </p>
             </div>
 
-            <p>
-              <label class="toggle-switch">
-                <input type="checkbox" /> add a location to my posts
-              </label>
-            </p>
-            <p>
-              <label class="toggle-switch">
-                <input type="checkbox" /> let others find me by email address
-              </label>
-            </p>
-            <p>
-              <label class="toggle-switch">
-                <input type="checkbox" /> tailor adds by my information
-              </label>
-            </p>
+            <div className="toggle-switch">
+              <input type="checkbox" id="check5" />
+              <label htmlFor="check5"></label>
+            </div>
+            <label htmlFor="check5">add a location to my posts</label>
+
+            <div className="toggle-switch">
+              <input type="checkbox" id="check6" />
+              <label htmlFor="check6"></label>
+            </div>
+            <label htmlFor="check6">let others find me by email address</label>
+
+            <div className="toggle-switch">
+              <input type="checkbox" id="check7" />
+              <label htmlFor="check7"></label>
+            </div>
+            <label htmlFor="check7">tailor adds by my information</label>
+
           </fieldset>
 
           <div className="button-footer">
