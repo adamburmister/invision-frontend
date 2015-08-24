@@ -1,3 +1,29 @@
 .settings.container {
   margin-top: $page-nav-height;
 }
+
+.settings--form {
+  @include shift(4);
+  @include span-columns(6);
+}
+
+$fieldset-vertical-spacer: 50px;
+fieldset {
+  padding: 0 0 $fieldset-vertical-spacer;
+  margin: 90px 0 0 0;
+  border: 0;
+  border-bottom: 1px solid #dee1e5;
+}
+
+legend {
+  position: absolute;
+  margin: -3.5em 0 0 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  color: $gray;
+}
+
+fieldset + .button-footer {
+  padding: $fieldset-vertical-spacer 0;
+}
