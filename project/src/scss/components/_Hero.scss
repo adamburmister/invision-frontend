@@ -48,9 +48,9 @@ $hero-bg-color: #00b286;
 
   a {
     color: #fff;
-    opacity: 0.5;
+    // opacity: 0.5;
     &:hover {
-      opacity: 1;
+      // opacity: 1;
     }
   }
 }
@@ -96,13 +96,16 @@ $hero-bg-color: #00b286;
 .hero--profile {
   .hero-content {
     margin-top: 88px;
-    color: #fff;
 
     @include media($phone-landscape-down) {
       margin-top: 0;
     }
 
+    h1 {
+      color: #fff;
+    }
     p {
+      color: #fff;
       opacity: 0.7;
     }
     a {

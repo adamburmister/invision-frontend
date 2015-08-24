@@ -11,26 +11,33 @@ class Settings extends React.Component {
   render() {
     return (
       <div className="container settings">
-        <form className="settings--form">
-          <h1>Settings</h1>
+        <form className="settings__form">
+          <h1 className="settings__form__title">Settings</h1>
 
           <fieldset>
             <legend>Account</legend>
-            <div className="settings--avatar">
-
+            <div className="settings__avatar">
+              <img src="/img/avatars/jessica.jpg" width="85" height="85" />
+              <button type="button" className="secondary settings__avatar__btn-change">change</button>
             </div>
-            <div className="settings--login">
-              Name
-              Email
-              Password
-              Change
+            <div className="settings__account">
+              <div className="settings__account__name">
+                <input type="text" placeholder="Your Name" value="Jessica Tuan" />
+              </div>
+              <div className="settings__account__email">
+                <input type="email" placeholder="Your Email" value="jessica@mail.com" />
+              </div>
+              <div className="settings__account__password">
+                <input type="password" placeholder="Password" value="password1" />
+                <a href="#" className="settings__account__password__change">change</a>
+              </div>
             </div>
           </fieldset>
 
           <fieldset>
             <legend>Notifications</legend>
 
-            <div className="radio">
+            <div className="checkbox">
               <div className="toggle-switch">
                 <input type="checkbox" id="check1" />
                 <label htmlFor="check1"></label>
@@ -38,7 +45,7 @@ class Settings extends React.Component {
               <label htmlFor="check1">email me when my posts are marked as favorites</label>
             </div>
 
-            <div className="radio">
+            <div className="checkbox">
               <div className="toggle-switch">
                 <input type="checkbox" id="check2" />
                 <label htmlFor="check2"></label>
@@ -46,7 +53,7 @@ class Settings extends React.Component {
               <label htmlFor="check2">email me when I'm mentioned</label>
             </div>
 
-            <div className="radio">
+            <div className="checkbox">
               <div className="toggle-switch">
                 <input type="checkbox" id="check3" />
                 <label htmlFor="check3"></label>
@@ -54,7 +61,7 @@ class Settings extends React.Component {
               <label htmlFor="check3">email me when I get a reply</label>
             </div>
 
-            <div className="radio">
+            <div className="checkbox">
               <div className="toggle-switch">
                 <input type="checkbox" id="check4" />
                 <label htmlFor="check4"></label>
@@ -67,23 +74,20 @@ class Settings extends React.Component {
             <legend>Privacy</legend>
             <div className="radio-group">
               <div>
-                <label className="radio">
-                  <input type="radio" name="tagging" /> allow anyone to tag me
-                </label>
+                <input type="radio" name="tagging" id="radio1" defaultChecked />
+                <label htmlFor="radio1">allow anyone to tag me</label>
               </div>
               <div>
-                <label className="radio">
-                  <input type="radio" name="tagging" /> only allow people I follow to tag me
-                </label>
+                <input type="radio" name="tagging" id="radio2" />
+                <label htmlFor="radio2">only allow people I follow to tag me</label>
               </div>
               <div>
-                <label className="radio">
-                  <input type="radio" name="tagging" /> don't allow anyone to tag me
-                </label>
+                <input type="radio" name="tagging" id="radio3" />
+                <label htmlFor="radio3">don't allow anyone to tag me</label>
               </div>
             </div>
 
-            <div className="radio">
+            <div className="checkbox">
               <div className="toggle-switch">
                 <input type="checkbox" id="check5" />
                 <label htmlFor="check5"></label>
@@ -91,7 +95,7 @@ class Settings extends React.Component {
               <label htmlFor="check5">add a location to my posts</label>
             </div>
 
-            <div className="radio">
+            <div className="checkbox">
               <div className="toggle-switch">
                 <input type="checkbox" id="check6" />
                 <label htmlFor="check6"></label>
@@ -99,7 +103,7 @@ class Settings extends React.Component {
               <label htmlFor="check6">let others find me by email address</label>
             </div>
 
-            <div className="radio">
+            <div className="checkbox">
               <div className="toggle-switch">
                 <input type="checkbox" id="check7" />
                 <label htmlFor="check7"></label>

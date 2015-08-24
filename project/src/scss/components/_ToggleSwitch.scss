@@ -1,7 +1,7 @@
 $toggle-switch-width: 52px;
 $toggle-switch-height: 27px;
 $toggle-switch-knob-diameter: 24px;
-$toggle-switch-knob-border: 2px;
+$toggle-switch-knob-border: 1px;
 
 .toggle-switch {
   input {
@@ -56,7 +56,7 @@ $toggle-switch-knob-border: 2px;
     background-color: $button-bg-color;
   }
   input:checked + label:after {
-    margin-left: $toggle-switch-knob-diameter;
+    margin-left: 26px;
     background-color: #fff;
   }
 }

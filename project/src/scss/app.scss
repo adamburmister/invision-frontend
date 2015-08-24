@@ -1,11 +1,20 @@
+
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 @import "variables";
 @import "fonts";
 @import "icons";
 @import "type";
+@import "forms";
 
 @import "layout";
 @import "components/PageNav";
@@ -18,13 +27,6 @@
 @import "components/NewPost";
 @import "components/ToggleSwitch";
 @import "views/settings";
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
 body {
   background-color: #fff;
@@ -45,29 +47,7 @@ a {
   @include transition(color 0.1s ease-in 0s);
 }
 
-button {
-  color: $button-color;
-  background-color: $button-bg-color;
-  border: 0;
-  border-radius: 3px;
-  padding: 10px 24px;
-  font-size: 14px;
-  font-weight: 500;
-  outline: none;
-  &:hover {
-    color: $button-color--hover;
-    background-color: $button-bg-color--hover;
-  }
-}
-
 img.avatar {
   border-radius: 5px;
   background-color: #999;
-}
-
-input {
-  &:focus, &:active {
-    outline: none;
-    border-color: $link-color--primary;
-  }
 }

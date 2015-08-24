@@ -38,7 +38,7 @@ export default class PageNav extends React.Component {
             </button>
 
             <Modal isOpen={this.state.isModalOpen}
-                   transitionName="modal-anim" 
+                   transitionName="modal-anim"
                    onClose={this.closeModal.bind(this)}>
               <NewPost />
             </Modal>
@@ -46,7 +46,7 @@ export default class PageNav extends React.Component {
             <input type="search" name="q" autofocus className="page-nav__search" />
 
             <div className="page-nav__account">
-              <Link to="profile" className="avatar">
+              <Link to="profile/jessica" className="avatar">
                 <img src="/img/avatars/jessica.jpg" width="30" height="30" className="avatar" />
                 <span className="caret"></span>
               </Link>
@@ -55,10 +55,10 @@ export default class PageNav extends React.Component {
                   <Link to="profile/jessica">Profile</Link>
                 </li>
                 <li>
-                  <a href="#profile/jessica/followers">Followers</a>
+                  <Link to="profile/jessica/followers">Followers</Link>
                 </li>
                 <li>
-                  <a href="#profile/jessica/following">Following</a>
+                  <Link to="profile/jessica/following">Following</Link>
                 </li>
                 <li>
                   <Link to="settings">Settings</Link>
