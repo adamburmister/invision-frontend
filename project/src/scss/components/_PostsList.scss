@@ -6,6 +6,7 @@
   @include shift(4);
   @include span-columns(6);
 
+  white-space: nowrap;
   margin-top: -50px;
 
   @include media($tablet-landscape-down) {
@@ -40,7 +41,7 @@
     letter-spacing: 0.1em;
     margin-left: 7%; /* roughly 40px at full-width, allows us to be a bit more liquid */
 
-    &:first-child {
+    &:first-of-type {
       margin-left: 0;
     }
 
@@ -55,7 +56,6 @@
   }
 
 }
-
 
 .posts-list--list-view {
   @include shift(4);

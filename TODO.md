@@ -43,3 +43,5 @@
 [ ] Extract remaining icons
 [ ] Isotope integration - throw out CSS3 grid
 [ ] Extract hero navigation bars into a component
+[ ] Photo viewer modal
+[ ] Tidy up the 

@@ -26,13 +26,13 @@ class Profile extends React.Component {
           </div>
         </div>
 
-        <nav className="posts-hero-nav text-centered">
-          <Link to={`/posts`} className="selected">Jessica's Feed</Link>
-          <Link to={`/posts`}>2,542 Followers</Link>
-          <Link to={`/posts`}>517 Following</Link>
-        </nav>
-
         <div className="container">
+          <nav className="posts-hero-nav text-centered">
+            <Link to={`/posts`} className="selected">Jessica's Feed</Link>
+            <Link to={`/posts`}>2,542 Followers</Link>
+            <Link to={`/posts`}>517 Following</Link>
+          </nav>
+          
           <PostsList posts={postsMock} view='list' />
         </div>
       </div>

@@ -27,14 +27,15 @@ class Posts extends React.Component {
       <div>
         <PostsHero />
 
-        <nav className="posts-hero-nav">
-          <Link to={`/posts`} className="selected">All Posts</Link>
-          <a href="#posts/photos">Photos</a>
-          <a href="#posts/videos">Videos</a>
-          <PostsListViewSwitcher onChange={this.onViewTypeChange.bind(this)} />
-        </nav>
-
         <div className="container">
+          <nav className="posts-hero-nav">
+            <PostsListViewSwitcher onChange={this.onViewTypeChange.bind(this)} />
+            
+            <Link to={`/posts`} className="selected">All Posts</Link>
+            <a href="#posts/photos">Photos</a>
+            <a href="#posts/videos">Videos</a>
+          </nav>
+
           <PostsList posts={postsMock} view={this.state.view} />
         </div>
       </div>
