@@ -30,9 +30,13 @@ $hero-bg-color: #00b286;
   margin-top: 140px;
   // margin-bottom: 130px;
   // height: 156px;
-  padding: 40px 30px 30px 30px;
-  background-color: transparentize($hero-bg-color, 0.3);
   border-radius: 4px;
+
+  // A solid background variant as used on the posts page
+  &--solid {
+    padding: 40px 30px 30px 30px;
+    background-color: transparentize($hero-bg-color, 0.3);
+  }
 
   // Responsive Breakpoints
   @include media($tablet-landscape-down) {
@@ -83,6 +87,20 @@ $hero-bg-color: #00b286;
       @include media($tablet-portrait-down) {
         font-size: 20px;
       }
+    }
+  }
+}
+
+.hero--profile {
+  .hero-content {
+    margin-top: 88px;
+    color: #fff;
+
+    p {
+      opacity: 0.7;
+    }
+    a {
+      color: $body-color;
     }
   }
 }

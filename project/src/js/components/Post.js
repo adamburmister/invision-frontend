@@ -125,7 +125,7 @@ class Post extends React.Component {
       optionalExpandToggleEl = (
         <a href="#" className="post-collapsible-toggle"
             onClick={(e) => this.handleExpandToggleClick(e)}>
-            {this.state.isCollapsed ? 'Expand' : 'Collapse'} <span class="caret"></span>
+            {this.state.isCollapsed ? 'Expand' : 'Collapse'} <span className="caret"></span>
         </a>
       );
     }

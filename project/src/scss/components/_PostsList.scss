@@ -3,11 +3,10 @@
 }
 
 .posts-hero-nav {
-  margin-top: -50px;
   @include shift(4);
   @include span-columns(6);
 
-  // height: $hero-nav-height;
+  margin-top: -50px;
 
   @include media($tablet-landscape-down) {
     @include shift(3);
@@ -26,7 +25,8 @@
     font-weight: bold;
     font-family: $font-family-open-sans;
     text-transform: uppercase;
-    float: left;
+    // float: left;
+    display: inline-block;
     line-height: $hero-nav-height;
     border-bottom: $hero-nav-border-height solid transparent;
     &.selected, &:focus, &:active, &:hover {

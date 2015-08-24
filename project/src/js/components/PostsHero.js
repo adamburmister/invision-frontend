@@ -12,7 +12,7 @@ export default class PostsHero extends React.Component {
     return (
       <div className="hero hero--home">
         <div className="container">
-          <form className="hero-content" action="#add">
+          <form className="hero-content hero-content--solid" action="#add">
             <input type="text" placeholder="What’s on your mind?" />
             <label className="hero__new__add-photo">
               <img src="/img/icons/camera.svg" height="13" />
