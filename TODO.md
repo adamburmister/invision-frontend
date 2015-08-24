@@ -3,9 +3,9 @@
 ## HTML
 [X] Semantic HTML for All Posts List
 [X] Semantic HTML for All Posts Grid
-[ ] Semantic HTML for Modal
+[X] Semantic HTML for Modal
 [ ] Semantic HTML for Settings
-[ ] Semantic HTML for Create new message Modal
+[X] Semantic HTML for Create new message Modal
 [ ] Semantic HTML for Profile / Feed
 [ ] Semantic HTML for Profile / Followers
 [ ] Semantic HTML for Profile / Following
@@ -16,30 +16,30 @@
 [x] Sass All Posts List
 [X] Sass All Posts Grid
 
-[ ] Extract Icons from PSDs
-
 ## Responsive
-[ ] Breakpoints or Fluid down to mobile
+[X] Breakpoints or Fluid down to mobile
 [ ] How does navigation structure change
-[ ] How does post list change? Remove grid icon?
+[X] How does post list change? Remove grid icon?
 
 ## Build
 [X] Setup Gulp
 [X] Setup Sass
 [X] Setup JSPM
 [X] Setup Babel
-[?] Setup Falcor server? Extra credit :)
 
 ## Framework
-[ ] Learn Redux.JS
-[ ] Learn ReactiveJS - how can it help? Document decision
+[X] Learn Redux.JS
+[-] Learn ReactiveJS - how can it help? Document decision
 
 ## React
-[ ] Switch between grid and list
-[ ] Router for Posts and Settings
-[ ] Add Photos, Videos views
+[X] Switch between grid and list
+[X] Router for Posts and Settings
+[X] Add Photos, Videos views
 
-## Redux
+## The rest
 [ ] Set current logged in user into Store (jessica)
 [ ] Look up user data via username
-[ ] Put the new post modal into PageNav?
+[X] New post modals
+[ ] Extract remaining icons
+[ ] Isotope integration - throw out CSS3 grid
+[ ] Extract hero navigation bars into a component

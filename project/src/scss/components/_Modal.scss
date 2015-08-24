@@ -56,6 +56,11 @@ $modal-close-button-color: $gray;
     width: 100vw;
     margin-top: 0;
     margin-left: -50vw;
+
+    .modal--close {
+      right: 28px;
+      top: 18px;
+    }
   }
 }
 
