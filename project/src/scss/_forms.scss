@@ -17,7 +17,7 @@ input {
 button {
   color: $button-color;
   background-color: $button-bg-color;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 3px;
   padding: 10px 24px;
   font-size: 14px;
@@ -27,6 +27,7 @@ button {
     color: $button-color--hover;
     background-color: $button-bg-color--hover;
     cursor: pointer;
+    border-color: $button-color--hover;
   }
 }
 
