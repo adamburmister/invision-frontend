@@ -34,7 +34,7 @@ class App extends React.Component {
               <Redirect from="/" to="/posts" />
               <Route component={Posts} path="posts"></Route>
               <Route component={Settings} path="settings"></Route>
-              <Route component={Profile} path="profile/:username">
+              <Route component={Profile} path="profile/:username(/:tab)">
                 {/*<Route component={ProfileFollowers} path="followers" />*/}
                 {/*<Route component={ProfileFollowing} path="following" />*/}
               </Route>

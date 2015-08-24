@@ -5,11 +5,23 @@
   &--text {
     height: 90px;
     width: 100%;
-    margin: 18px 0;
+    margin: 18px 0 12px 0;
+    padding: 6px 10px;
+    font-size: 18px;
     border: 0;
     border-radius: 2px;
   }
-  #fileUpload {
+  &--attachment {
+    line-height: 37px;
+  }
+  &--btnpost {
+  }
+
+  .hero__new__add-photo, .hero__new__add-video {
+    color: $gray;
+  }
+
+  input[type=file] {
     display: none;
   }
 }

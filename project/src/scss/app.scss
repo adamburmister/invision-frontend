@@ -31,6 +31,21 @@ a {
   @include transition(color 0.1s ease-in 0s);
 }
 
+button {
+  color: $button-color;
+  background-color: $button-bg-color;
+  border: 0;
+  border-radius: 3px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  &:hover {
+    color: $button-color--hover;
+    background-color: $button-bg-color--hover;
+  }
+}
+
 img.avatar {
   border-radius: 5px;
   background-color: #999;
@@ -46,5 +61,5 @@ input {
 h4 {
   font-weight: $h4-font-weight;
   font-size: $h4-font-size;
-  color: #70767f;
+  color: $gray;
 }

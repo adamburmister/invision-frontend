@@ -1,6 +1,8 @@
 $modal-width: 575px;
 $modal-height: 215px;
 $modal-bg: #dee1e5;
+$modal-close-button-size: 21px;
+$modal-close-button-color: $gray;
 
 .modal-bg {
   position: fixed;
@@ -24,6 +26,31 @@ $modal-bg: #dee1e5;
   background: $modal-bg;
   text-align: left;
   border-radius: 3px;
+
+  .modal--close {
+    background: transparent;
+    color: $modal-close-button-color;
+    border: 1px solid $modal-close-button-color;
+    font-family: $font-family-open-sans;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 1;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    height: $modal-close-button-size;
+    width: $modal-close-button-size;
+    border-radius: $modal-close-button-size;
+    position: absolute;
+    right: -27px;
+    top: -$modal-close-button-size;
+    @include transition(all 0.2s ease-in-out);
+
+    &:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+  }
 
   @include media($tablet-portrait-down) {
     width: 100vw;

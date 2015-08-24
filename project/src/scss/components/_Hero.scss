@@ -44,7 +44,6 @@ $hero-bg-color: #00b286;
   a {
     color: #fff;
     opacity: 0.5;
-    @include transition(opacity 0.1s ease-in);
     &:hover {
       opacity: 1;
     }
@@ -80,17 +79,25 @@ $hero-bg-color: #00b286;
         font-size: 20px;
       }
     }
+  }
+}
 
-    a {
-      margin-left: 50px;
+.hero__new__add-photo, .hero__new__add-video {
+  -webkit-font-smoothing: antialiased;
+  margin-left: 50px;
+  color: #fff;
+  opacity: 0.5;
+  @include transition(opacity 0.1s ease-in);
 
-      img {
-        margin-right: 10px;
-      }
+  &:hover {
+    opacity: 1;
+  }
 
-      &:first-of-type {
-        margin-left: 0;
-      }
-    }
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  img {
+    margin-right: 10px;
   }
 }

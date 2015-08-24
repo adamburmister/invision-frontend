@@ -48,7 +48,7 @@ $page-nav-padding: 12px;
     // Using the non-semantic B for the colour difference
     b {
       font-weight: normal;
-      color: #70767f;
+      color: $gray;
     }
   }
 
@@ -101,7 +101,7 @@ $page-nav-padding: 12px;
       }
 
       a {
-        color: #70767f;
+        color: $gray;
         font-size: $dropdown-font-size;
         display: block;
         padding: 0 16px;
@@ -132,6 +132,10 @@ $page-nav-padding: 12px;
   &__btn-new {
     background: transparent;
     border: 0;
+    padding: 0;
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   // The search input box
