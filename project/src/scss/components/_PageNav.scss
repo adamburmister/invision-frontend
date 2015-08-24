@@ -129,6 +129,11 @@ $page-nav-padding: 12px;
     }
   }
 
+  &__btn-new {
+    background: transparent;
+    border: 0;
+  }
+
   // The search input box
   &__search {
     margin: 0 23px;

@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-export default class Hero extends React.Component {
+export default class PostsHero extends React.Component {
 
   constructor(props) {
     super();

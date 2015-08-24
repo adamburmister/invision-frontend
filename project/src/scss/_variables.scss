@@ -4,13 +4,13 @@ $font-family-proxima-nova: "Proxima Nova", sans-serif;
 $font-weight-light: 300;
 $body-font-size: 15px;
 $h1-font-size: 26px;
-$h1-font-weight: semibold;
+$h1-font-weight: 600;
 $h2-font-size: 22px;
-$h2-font-weight: semibold;
+$h2-font-weight: 600;
 $h3-font-size: 18px;
-$h3-font-weight: semibold;
+$h3-font-weight: 600;
 $h4-font-size: 16px;
-$h4-font-weight: regular;
+$h4-font-weight: normal;
 
 // Colours
 $body-color: #262728;
@@ -25,3 +25,4 @@ $post-body-font-size: $body-font-size;
 
 // page-nav
 $page-nav-background-color: #262728;
+$page-nav-height: 60px;

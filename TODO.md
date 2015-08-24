@@ -38,3 +38,8 @@
 [ ] Switch between grid and list
 [ ] Router for Posts and Settings
 [ ] Add Photos, Videos views
+
+## Redux
+[ ] Set current logged in user into Store (jessica)
+[ ] Look up user data via username
+[ ] Put the new post modal into PageNav?

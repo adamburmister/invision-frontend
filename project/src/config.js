@@ -2,6 +2,7 @@ System.config({
   "baseURL": "/",
   "transpiler": "babel",
   "babelOptions": {
+    "stage": 0,
     "optional": [
       "runtime"
     ],
@@ -26,11 +27,14 @@ System.config({
     "pixi.js": "npm:pixi.js@3.0.6",
     "react": "npm:react@0.14.0-beta3",
     "react-dom": "npm:react-dom@0.14.0-beta3",
+    "react-modal": "npm:react-modal@0.3.0",
     "react-redux": "npm:react-redux@0.9.0",
     "react-router": "npm:react-router@1.0.0-beta3",
     "react-timeago": "npm:react-timeago@2.2.1",
     "redux": "npm:redux@1.0.1",
+    "redux-logger": "npm:redux-logger@1.0.5",
     "redux-react-router": "npm:redux-react-router@0.4.0",
+    "redux-thunk": "npm:redux-thunk@0.1.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -164,6 +168,11 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.1",
       "strip-ansi": "npm:strip-ansi@3.0.0",
       "supports-color": "npm:supports-color@2.0.0"
+    },
+    "npm:classnames@2.1.3": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:coffee-script@1.3.3": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
@@ -551,6 +560,13 @@ System.config({
     },
     "npm:react-dom@0.14.0-beta3": {
       "fbjs": "npm:fbjs@0.1.0-alpha.4",
+      "react": "npm:react@0.14.0-beta3"
+    },
+    "npm:react-modal@0.3.0": {
+      "classnames": "npm:classnames@2.1.3",
+      "element-class": "npm:element-class@0.2.2",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
       "react": "npm:react@0.14.0-beta3"
     },
     "npm:react-redux@0.9.0": {

@@ -1,5 +1,6 @@
 export default [
   {
+    "id": 1,
     "age": "3m",
     "author": {
       "handle": "sam",
@@ -60,6 +61,7 @@ export default [
   },
 
   {
+    "id": 2,
     "age": "25m",
     "author": {
       "handle": "meg",
@@ -81,6 +83,7 @@ export default [
   },
 
   {
+    "id": 3,
     "age": "50m",
     "author": {
       "handle": "kerem",
@@ -102,6 +105,7 @@ export default [
   },
 
   {
+    "id": 4,
     "age": "50m",
     "author": {
       "handle": "victor",
@@ -123,6 +127,7 @@ export default [
   },
 
   {
+    "id": 5,
     "age": "50m",
     "author": {
       "handle": "liang",
@@ -144,6 +149,7 @@ export default [
   },
 
   {
+    "id": 6,
     "age": "50m",
     "author": {
       "handle": "gupta",

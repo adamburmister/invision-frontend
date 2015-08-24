@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Post from 'js/components/Post';
 import PostsListViewSwitcher from 'js/components/PostsListViewSwitcher';
+import { Link } from 'react-router';
 
 import Isotope from 'isotope-layout';
 import FitColumns from 'isotope-fit-columns';
@@ -18,7 +19,7 @@ export default class PostsList extends React.Component {
   }
 
   componentWillUnmount() {
-    destroyGrid();
+    this.destroyGrid();
   }
 
   componentDidUpdate() {
@@ -71,18 +72,18 @@ export default class PostsList extends React.Component {
     // this.grid.unstamp(this.expandedPostEl);
   }
 
-  onViewTypeChange(newViewType) {
-    if(this.state.view === newViewType) return;
-
-    console.log('PostsList::onViewTypeChange - Switched grid view', this.state.view, 'to', newViewType);
-    if(newViewType === 'grid') {
-      this.initGrid();
-    } else {
-      this.destroyGrid();
-    }
-    this.setState({ view: newViewType });
-  }
-
+  // onViewTypeChange(newViewType) {
+  //   if(this.state.view === newViewType) return;
+  //
+  //   console.log('PostsList::onViewTypeChange - Switched grid view', this.state.view, 'to', newViewType);
+  //   if(newViewType === 'grid') {
+  //     this.initGrid();
+  //   } else {
+  //     this.destroyGrid();
+  //   }
+  //   this.setState({ view: newViewType });
+  // }
+  //
   onBeforeExpand(postDomEl) {
     console.log('PostsList::onBeforeExpand', postDomEl);
     this.expandedPostEl = postDomEl;
@@ -92,27 +93,21 @@ export default class PostsList extends React.Component {
 
   render() {
     let classes = ['posts-list'];
-    if(this.state.view === 'grid') {
+    if(this.props.view === 'grid') {
       classes.push('posts-list--grid-view');
     }
-    if(this.state.view === 'list') {
+    if(this.props.view === 'list') {
       classes.push('posts-list--list-view');
     }
 
     return (
       <div>
-        <nav className="posts-hero-nav">
-          <a href="#posts" className="selected">All Posts</a>
-          <a href="#posts/photos">Photos</a>
-          <a href="#posts/videos">Videos</a>
-          <PostsListViewSwitcher onChange={this.onViewTypeChange.bind(this)} />
-        </nav>
         <section ref="postList" className={classes.join(' ')}>
-          {this.props.posts.map((post, i) => {
+          {this.props.posts.map(post => {
             return (<Post data={post}
+                          key={post.id}
                           onBeforeExpand={this.onBeforeExpand.bind(this)}
-                          onExpanded={this.onExpanded.bind(this)}
-                          key={i} />)
+                          onExpanded={this.onExpanded.bind(this)} />)
           })}
         </section>
       </div>
@@ -121,7 +116,7 @@ export default class PostsList extends React.Component {
 
 }
 
-PostsList.propTypes = { posts: React.PropTypes.array };
-PostsList.defaultProps = { posts: [] };
+PostsList.propTypes = { posts: React.PropTypes.array, view: React.PropTypes.string };
+PostsList.defaultProps = { posts: [], view: 'list' };
 
 export default PostsList;
