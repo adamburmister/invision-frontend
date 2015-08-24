@@ -3,13 +3,13 @@ $hero-nav-link-color: #bec3cc;
 $hero-nav-link-color--selected: #fff;
 $hero-nav-border-height: 4px;
 $hero-nav-height: 50px - $hero-nav-border-height;
-$page-nav-height: 50px;
+$page-nav-height: 60px;
 $hero-bg-color: #00b286;
 
 .hero {
-  height: $hero-height;
-  margin-top: $hero-nav-height;
-  padding-bottom: $page-nav-height;
+  min-height: $hero-height;
+  margin-top: $page-nav-height;
+  padding-bottom: $hero-nav-height;
   background: $page-nav-background-color url(/img/hero-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 
@@ -27,9 +27,7 @@ $hero-bg-color: #00b286;
   @include span-columns(6);
   @include omega();
 
-  margin-top: 140px;
-  // margin-bottom: 130px;
-  // height: 156px;
+  -webkit-font-smoothing: antialiased;
   border-radius: 4px;
 
   // A solid background variant as used on the posts page
@@ -62,7 +60,8 @@ $hero-bg-color: #00b286;
 // Home Hero
 .hero--home {
   .hero-content {
-    -webkit-font-smoothing: antialiased;
+    margin-top: 123px;
+    height: 156px;
 
     input {
       background: transparent;
