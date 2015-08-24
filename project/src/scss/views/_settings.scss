@@ -5,6 +5,16 @@
 .settings--form {
   @include shift(4);
   @include span-columns(6);
+
+  @include media($tablet-landscape-down) {
+    @include shift(3);
+    @include span-columns(8);
+  }
+  @include media($phone-landscape-down) {
+    @include shift(0);
+    @include span-columns($grid-columns);
+    @include pad();
+  }
 }
 
 $fieldset-vertical-spacer: 50px;
