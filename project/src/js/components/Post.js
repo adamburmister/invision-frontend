@@ -23,7 +23,7 @@ const TRANSITION_EVENT = whichTransitionEvent();
 class Post extends React.Component {
 
   constructor(props) {
-    super();
+    super(props);
     this.state = props;
   }
 

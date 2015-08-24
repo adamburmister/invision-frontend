@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 export default class PostsHero extends React.Component {
 
   constructor(props) {
-    super();
+    super(props);
     this.state = props;
   }
 
