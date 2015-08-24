@@ -37,3 +37,21 @@ legend {
 fieldset + .button-footer {
   padding: $fieldset-vertical-spacer 0;
 }
+
+.radio {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  line-height: 27px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  > label, .toggle-switch {
+    float: left;
+  }
+  >label {
+    margin-left: 25px;
+  }
+}
