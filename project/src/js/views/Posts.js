@@ -12,14 +12,22 @@ class Posts extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { view: 'list' };
+    this.state = {
+      view: 'list',
+      filter: null
+    };
   }
 
-  onViewTypeChange(newViewType) {
+  handleViewTypeChange(newViewType) {
     if(this.state.view === newViewType) return;
 
-    console.log('PostsList::onViewTypeChange - Switched grid view', this.state.view, 'to', newViewType);
+    console.log('PostsList::handleViewTypeChange - Switched grid view', this.state.view, 'to', newViewType);
     this.setState({ view: newViewType });
+  }
+
+  handleTabClick(e, newFilter) {
+    e.preventDefault();
+    this.setState({ filter: newFilter });
   }
 
   render() {
@@ -29,14 +37,16 @@ class Posts extends React.Component {
 
         <div className="container">
           <nav className="posts-hero-nav">
-            <PostsListViewSwitcher onChange={this.onViewTypeChange.bind(this)} />
-            
-            <Link to={`/posts`} className="selected">All Posts</Link>
-            <a href="#posts/photos">Photos</a>
-            <a href="#posts/videos">Videos</a>
+            <PostsListViewSwitcher onChange={this.handleViewTypeChange.bind(this)} />
+            <a href="#/posts" onClick={(e) => this.handleTabClick(e, null)}
+                className={this.state.filter === null ? 'selected':''}>All Posts</a>
+            <a href="#posts/photos" onClick={(e) => this.handleTabClick(e, 'photo')}
+                 className={this.state.filter === 'photo' ? 'selected':''}>Photos</a>
+            <a href="#posts/videos" onClick={(e) => this.handleTabClick(e, 'video')}
+                 className={this.state.filter === 'video' ? 'selected':''}>Videos</a>
           </nav>
 
-          <PostsList posts={postsMock} view={this.state.view} />
+          <PostsList posts={postsMock} view={this.state.view} filter={this.state.filter} />
         </div>
       </div>
     );

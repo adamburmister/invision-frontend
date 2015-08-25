@@ -2,6 +2,7 @@
   padding-top: 50px;
 }
 
+// TODO: Extract
 .posts-hero-nav {
   @include shift(4);
   @include span-columns(6);

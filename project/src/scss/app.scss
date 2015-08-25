@@ -1,4 +1,6 @@
 $border-box-sizing: true !global;
+$visual-grid: true;
+$visual-grid-index: front;
 
 @import "bourbon";
 @import "grid-settings";

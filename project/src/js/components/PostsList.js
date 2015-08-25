@@ -15,7 +15,7 @@ export default class PostsList extends React.Component {
   }
 
   componentDidMount() {
-    // this.initGrid();
+    this.initGrid();
   }
 
   componentWillUnmount() {
@@ -24,8 +24,15 @@ export default class PostsList extends React.Component {
 
   componentDidUpdate() {
     if(this.state.grid) {
-      this.state.grid.reloadItems();
-      this.state.grid.layout();
+      // this.state.grid.reloadItems();
+      // this.state.grid.layout();
+
+      let filter = '.post';
+      if(this.props.filter) {
+        filter = `.post--has-${this.props.filter}`;
+      }
+
+      this.state.grid.arrange({ filter: filter });
     }
   }
 
@@ -102,7 +109,15 @@ export default class PostsList extends React.Component {
 
 }
 
-PostsList.propTypes = { posts: React.PropTypes.array, view: React.PropTypes.string };
-PostsList.defaultProps = { posts: [], view: 'list' };
+PostsList.propTypes = {
+  posts: React.PropTypes.array,
+  view: React.PropTypes.string,
+  filter: React.PropTypes.string
+};
+PostsList.defaultProps = {
+  posts: [],
+  view: 'list',
+  filter: null
+};
 
 export default PostsList;

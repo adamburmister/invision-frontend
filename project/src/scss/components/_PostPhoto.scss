@@ -18,3 +18,13 @@
     margin-bottom: -21px;
   }
 }
+
+// Grid view...
+.posts-list--grid-view {
+  .post-photo:last-child {
+    margin-bottom: 0;
+  }
+  .post-photo__thumbnail:last-child {
+    margin-bottom: 0; // show the utils below images
+  }
+}

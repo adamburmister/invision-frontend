@@ -149,21 +149,14 @@ $post-border-color--internal: #eef0f2;
         margin-top: 0;
         height: 0;
       }
-      .post-thumbnail {
-        margin-bottom: -21px;
-      }
     }
   }
 }
+
 // Grid view...
 .posts-list--grid-view {
-  .post {
-    .post-utils {
-      position: relative;
-      float: right;
-    }
-    .post-thumbnail:last-child {
-      margin-bottom: 0; // show the utils below images
-    }
+  .post-utils {
+    position: relative;
+    float: right;
   }
 }

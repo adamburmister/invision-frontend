@@ -43,5 +43,6 @@
 [ ] Extract remaining icons
 [ ] Isotope integration - throw out CSS3 grid
 [ ] Extract hero navigation bars into a component
-[ ] Photo viewer modal
+[X] Photo viewer modal
 [ ] Icons on settings inputs
+[ ] Extract strings to constants (view type, filter type)
