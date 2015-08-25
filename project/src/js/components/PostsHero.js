@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import PostAttachment from './PostAttachment';
 
 export default class PostsHero extends React.Component {
 
@@ -12,16 +13,9 @@ export default class PostsHero extends React.Component {
     return (
       <div className="hero hero--home">
         <div className="container">
-          <form className="hero-content hero-content--solid" action="#add">
+          <form className="hero-content hero-content--solid" action="">
             <input type="text" placeholder="What’s on your mind?" />
-            <label className="hero__new__add-photo">
-              <img src="/img/icons/camera.svg" height="13" />
-              Add Photo
-            </label>
-            <label className="hero__new__add-video">
-              <img src="/img/icons/video.svg" height="13" />
-              Add Video
-            </label>
+            <PostAttachment />
           </form>
         </div>
       </div>

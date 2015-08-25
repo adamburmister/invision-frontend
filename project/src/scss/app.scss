@@ -1,14 +1,8 @@
+$border-box-sizing: true !global;
 
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
 @import "variables";
 @import "fonts";
@@ -26,6 +20,7 @@ html {
 @import "components/Modal";
 @import "components/NewPost";
 @import "components/ToggleSwitch";
+@import "components/PostAttachment";
 @import "views/settings";
 
 body {
