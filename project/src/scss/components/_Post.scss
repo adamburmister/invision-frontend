@@ -35,7 +35,7 @@ $post-border-color--internal: #eef0f2;
 
   .post-padding {
     float: left;
-    // width: 100%;
+    width: 100%;
     padding: 25px 25px 15px $post-padding-left;
 
     &:empty {
@@ -76,24 +76,6 @@ $post-border-color--internal: #eef0f2;
     }
   }
 
-  .post-thumbnail {
-    @include clearfix;
-    background-color: $icon-color;
-    display: inline-block;
-    margin-top: 15px;
-    margin-right: -$post-padding;
-    margin-left: -$post-padding-left;
-
-    img {
-      width: 100%;
-      float: left;
-    }
-
-    &:last-child {
-      margin-bottom: -32px;
-    }
-  }
-
   a.post-collapsible-toggle {
     font-size: 12px;
     &:hover {
@@ -125,6 +107,7 @@ $post-border-color--internal: #eef0f2;
   }
 
   .post-reply-form {
+    background-color: #f9fafb;
     padding: $post-padding;
     float: left;
     width: 100%;

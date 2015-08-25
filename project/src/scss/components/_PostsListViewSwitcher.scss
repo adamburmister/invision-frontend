@@ -1,6 +1,10 @@
 .posts-list-view-switcher {
   float: right;
 
+  @include media($phone-landscape-down) {
+    display: none;
+  }
+
   a {
     margin: 0;
     float: left;

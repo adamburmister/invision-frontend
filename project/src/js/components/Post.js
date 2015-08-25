@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 import Icon from './Icon';
+import PostContent from './PostContent';
 
 /* From Modernizr */
 function whichTransitionEvent(){
@@ -26,7 +27,7 @@ class Post extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = props;
+    this.state = {...props};
   }
 
   componentDidMount() {
@@ -53,31 +54,16 @@ class Post extends React.Component {
   }
 
   renderContent(data) {
-    let thumbnailEl;
-    if(data.content.photo && data.content.photo.thumbnailUrl) {
-      thumbnailEl = this.renderThumbnail(data.content.photo.thumbnailUrl, false);
-    }
-
     return (
-      <div className="post-content">{/* not happy about extra element */}
-        <Link to={`/profile/${data.author.handle}`} rel="author" className="post-author">
-          <img src={data.author.avatarUrl} className="avatar" width="40" height="40" />
-          {data.author.name}
-        </Link>
-
-        <div className="post-text" dangerouslySetInnerHTML={{ __html: data.content.text }}></div>
-
-        {thumbnailEl}
-      </div>
+      <PostContent
+          id={data.id}
+          thumbnailUrl={data.content.photo.thumbnailUrl}
+          fullUrl={data.content.photo.url}
+          authorHandle={data.author.handle}
+          authorAvatarUrl={data.author.avatarUrl}
+          authorName={data.author.name}
+          text={data.content.text} />
     )
-  }
-
-  renderThumbnail(thumbnailUrl, includeVideoPlayButton=false) {
-    return (
-      <a href="#" className="post-thumbnail">
-        <img src={thumbnailUrl} />
-      </a>
-    );
   }
 
   renderPostUtils(age='3m') {
@@ -98,9 +84,7 @@ class Post extends React.Component {
     return (
       <div className="post-collapsible" ref="postCollapsible">
         {replies.map((reply) => {
-          return (
-            <div className="post-padding post-reply">{this.renderContent(reply)}</div>
-          );
+          return (<div className="post-padding post-reply">{this.renderContent(reply)}</div>);
         })}
 
         <form className="post-reply-form">
@@ -139,18 +123,20 @@ class Post extends React.Component {
     }
 
     return (
-      <article className={cssClasses.join(' ')}>
-        <div className="post-padding">
-          {this.renderContent(data)}
+      <div>
+        <article className={cssClasses.join(' ')}>
+          <div className="post-padding">
+            {this.renderContent(data)}
 
-          <div className="post-footer">
-            {optionalExpandToggleEl}
-            {this.renderPostUtils(data.age)}
+            <div className="post-footer">
+              {optionalExpandToggleEl}
+              {this.renderPostUtils(data.age)}
+            </div>
           </div>
-        </div>
 
-        {this.renderReplies(data.replies)}
-      </article>
+          {this.renderReplies(data.replies)}
+        </article>
+      </div>
     )
   }
 
@@ -162,6 +148,7 @@ Post.propTypes = {
   onExpanded: React.PropTypes.func,
   isCollapsed: React.PropTypes.bool
 };
+
 Post.defaultProps = {
   data: {},
   isCollapsed: true,

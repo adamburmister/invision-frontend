@@ -1,7 +1,7 @@
 import React from 'react';
 import PostAttachment from './PostAttachment';
 
-export default class PageFooter extends React.Component {
+export default class NewPostModalBody extends React.Component {
 
   render() {
     return (

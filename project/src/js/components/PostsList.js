@@ -72,18 +72,6 @@ export default class PostsList extends React.Component {
     // this.grid.unstamp(this.expandedPostEl);
   }
 
-  // onViewTypeChange(newViewType) {
-  //   if(this.state.view === newViewType) return;
-  //
-  //   console.log('PostsList::onViewTypeChange - Switched grid view', this.state.view, 'to', newViewType);
-  //   if(newViewType === 'grid') {
-  //     this.initGrid();
-  //   } else {
-  //     this.destroyGrid();
-  //   }
-  //   this.setState({ view: newViewType });
-  // }
-  //
   onBeforeExpand(postDomEl) {
     console.log('PostsList::onBeforeExpand', postDomEl);
     this.expandedPostEl = postDomEl;
@@ -101,16 +89,14 @@ export default class PostsList extends React.Component {
     }
 
     return (
-      <div>
-        <section ref="postList" className={classes.join(' ')}>
-          {this.props.posts.map(post => {
-            return (<Post data={post}
-                          key={post.id}
-                          onBeforeExpand={this.onBeforeExpand.bind(this)}
-                          onExpanded={this.onExpanded.bind(this)} />)
-          })}
-        </section>
-      </div>
+      <section ref="postList" className={classes.join(' ')}>
+        {this.props.posts.map(post => {
+          return (<Post key={post.id}
+                        data={post}
+                        onBeforeExpand={this.onBeforeExpand.bind(this)}
+                        onExpanded={this.onExpanded.bind(this)} />)
+        })}
+      </section>
     )
   }
 

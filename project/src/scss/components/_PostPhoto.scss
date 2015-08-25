@@ -1,0 +1,20 @@
+@import "components/PostPhotoModalBody";
+
+.post-photo {
+  @include clearfix;
+  background-color: $icon-color;
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: -$post-padding;
+  margin-left: -$post-padding-left;
+
+  &__thumbnail {
+    width: 100%;
+    float: left;
+    cursor: pointer;
+  }
+
+  &:last-child {
+    margin-bottom: -21px;
+  }
+}

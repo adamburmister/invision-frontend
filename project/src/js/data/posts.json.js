@@ -72,7 +72,7 @@ export default [
       "text": "<p>My view this morning is simply beautiful... <a href=\"http://instagram.com/p/mV0PUrHRwQ/\">instagram.com/p/mV0PUrHRwQ/</a></p>",
       "photo": {
         "thumbnailUrl": "/img/photos/beach-thumbnail.jpg",
-        "url": ""
+        "url": "/img/photos/beach.jpg"
       },
       "video": {
         "thumbnailUrl": "",

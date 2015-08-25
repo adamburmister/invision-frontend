@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 // Components
 import Modal from '../components/Modal';
-import NewPost from '../components/NewPost';
+import NewPostModalBody from '../components/NewPostModalBody';
 
 export default class PageNav extends React.Component {
 
@@ -17,7 +17,6 @@ export default class PageNav extends React.Component {
   }
 
   closeModal() {
-    console.log(arguments);
     this.setState({ isModalOpen: false });
   }
 
@@ -40,7 +39,7 @@ export default class PageNav extends React.Component {
             <Modal isOpen={this.state.isModalOpen}
                    transitionName="modal-anim"
                    onClose={this.closeModal.bind(this)}>
-              <NewPost />
+              <NewPostModalBody />
             </Modal>
 
             <input type="search" name="q" autofocus className="page-nav__search" />

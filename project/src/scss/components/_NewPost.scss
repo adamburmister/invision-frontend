@@ -11,7 +11,10 @@
     border: 0;
     border-radius: 2px;
   }
-  &--attachment {
-    line-height: 37px;
+  .post-attachment {
+    line-height: 35px;
+  }
+  &--btnpost {
+    padding: 8px 24px;  
   }
 }
