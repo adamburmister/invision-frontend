@@ -8,7 +8,7 @@ $hero-bg-color: #00b286;
 .hero {
   height: $hero-height;
   padding-bottom: $hero-nav-height;
-  background: $page-nav-background-color url(/img/hero-bg.jpg) no-repeat 50% 50%;
+  background: $page-nav-background-color url(../img/hero-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 
   @include media($phone-landscape-down) {

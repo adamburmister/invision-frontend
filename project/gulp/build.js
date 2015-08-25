@@ -10,7 +10,7 @@ var minifyHtml = require('gulp-minify-html');
 var pngquant = require('imagemin-pngquant');
 var rename = require('gulp-rename');
 var replace = require('gulp-replace');
-var runSeq = require('run-sequence');
+var runSeq = require('run-sequence').use(gulp);
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var neat = require('node-neat').includePaths;
@@ -28,7 +28,7 @@ var sassOptions = {
 
 // Build SASS for distribution.
 gulp.task('buildsass', function () {
-  gulp.src(global.paths.sass)
+  return gulp.src(global.paths.sass)
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(concat('app.css'))
     .pipe(autoprefixer())
@@ -53,7 +53,7 @@ gulp.task('buildjs', function () {
 
 // Build HTML for distribution.
 gulp.task('buildhtml', function () {
-  gulp.src(global.paths.html)
+  return gulp.src(global.paths.html)
     .pipe(replace('css/app.css', 'app.min.css'))
     .pipe(replace('lib/system.js', 'app.min.js'))
     .pipe(replace('<script src="config.js"></script>', ''))
@@ -64,7 +64,7 @@ gulp.task('buildhtml', function () {
 
 // Build images for distribution.
 gulp.task('buildimg', function () {
-  gulp.src(global.paths.img)
+  return gulp.src(global.paths.img)
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
@@ -75,6 +75,6 @@ gulp.task('buildimg', function () {
 
 // Push to gh-pages
 gulp.task('deploy', function () {
-  return gulp.src(global.paths.dist + '/**/*')
+  return gulp.src(global.paths.dist + '/{*,**/*}')
     .pipe(deploy())
 });

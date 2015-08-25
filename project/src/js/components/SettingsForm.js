@@ -41,7 +41,7 @@ class SettingsForm extends React.Component {
         <fieldset>
           <legend>Account</legend>
           <div className="settings__avatar">
-            <img src="/img/avatars/jessica.jpg" width="85" height="85" />
+            <img src="img/avatars/jessica.jpg" width="85" height="85" />
             <button type="button" className="secondary settings__avatar__btn-change">change</button>
           </div>
           <div className="settings__account">

@@ -19,7 +19,7 @@ class Profile extends React.Component {
         <div className="hero hero--profile">
           <div className="container">
             <div className="hero-content text-centered">
-              <img src={`/img/avatars/${this.state.handle}.jpg`} className="avatar" />
+              <img src={`img/avatars/${this.state.handle}.jpg`} className="avatar" />
               <h1>{this.state.name}</h1>
               <p>{this.state.byline}</p>
               <p><a rel="author" href={this.state.link} target="_blank">{this.state.link.replace('http://','')}</a></p>
