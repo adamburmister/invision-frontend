@@ -98,7 +98,7 @@ $post-border-color--internal: #eef0f2;
     .post-collapsible {
       opacity: 1;
       max-height: 350px; // in production this wouldn't work well because of timing delays
-      overflow: scroll;
+      overflow: auto;
     }
   }
 
