@@ -5,3 +5,4 @@ project/src/css
 project/src/lib
 project/src/lib
 .publish
+npm-debug.log
