@@ -13,16 +13,22 @@ var replace = require('gulp-replace');
 var runSeq = require('run-sequence');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var neat = require('node-neat').includePaths;
+var bourbon = require('node-bourbon').includePaths;
 
 // One build task to rule them all.
 gulp.task('build', function (done) {
   runSeq('clean', ['buildsass', 'buildimg', 'buildjs'], 'buildhtml', done);
 });
 
+var sassOptions = {
+  includePaths: [global.paths.sass].concat(neat, bourbon)
+};
+
 // Build SASS for distribution.
 gulp.task('buildsass', function () {
   gulp.src(global.paths.sass)
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(concat('app.css'))
     .pipe(autoprefixer())
     .pipe(minifyCss())
