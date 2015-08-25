@@ -20,8 +20,6 @@ class Posts extends React.Component {
 
   handleViewTypeChange(newViewType) {
     if(this.state.view === newViewType) return;
-
-    console.log('PostsList::handleViewTypeChange - Switched grid view', this.state.view, 'to', newViewType);
     this.setState({ view: newViewType });
   }
 
