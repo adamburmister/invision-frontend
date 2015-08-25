@@ -17,7 +17,7 @@ class Modal extends React.Component {
           <div className="modal-bg">
             <div className={`modal ${this.props.className}`}>
               {this.props.children}
-              <button type="button" className="modal--close" onClick={this.props.onClose}>&times;</button>
+              <button type="button" className="modal__close" onClick={this.props.onClose}>&times;</button>
             </div>
           </div>
         </ReactCSSTransitionGroup>

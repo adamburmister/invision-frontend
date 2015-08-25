@@ -6,6 +6,15 @@ $modal-width: 975px;
   margin: 0 0 0 (-$modal-width/2);
   background-color: transparent;
 
+  @include media($tablet-landscape-down) {
+    position: relative;
+    width: auto;
+    height: auto;
+    left: auto;
+    top: auto;
+    margin: 0;
+  }
+
   .post-padding {
     background-color: #fff;
   }
@@ -25,6 +34,7 @@ $modal-width: 975px;
       overflow: hidden;
       > img {
         float: left;
+        max-width: 100%;
       }
     }
   }

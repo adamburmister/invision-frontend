@@ -7,7 +7,7 @@ export default class PostPhotoModalBody extends React.Component {
     return (
       <aside className="post-photo-modal-body">
         <div className="post-photo-modal-body--full">
-          <img src={this.props.url} width="975" height="582" />
+          <img src={this.props.url} />
         </div>
         <div className="post-padding">
           <PostContent
