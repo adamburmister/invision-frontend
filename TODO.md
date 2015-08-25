@@ -4,9 +4,9 @@
 [X] Semantic HTML for All Posts List
 [X] Semantic HTML for All Posts Grid
 [X] Semantic HTML for Modal
-[ ] Semantic HTML for Settings
+[X] Semantic HTML for Settings
 [X] Semantic HTML for Create new message Modal
-[ ] Semantic HTML for Profile / Feed
+[X] Semantic HTML for Profile / Feed
 [ ] Semantic HTML for Profile / Followers
 [ ] Semantic HTML for Profile / Following
 
@@ -18,7 +18,7 @@
 
 ## Responsive
 [X] Breakpoints or Fluid down to mobile
-[ ] How does navigation structure change
+[X] How does navigation structure change
 [X] How does post list change? Remove grid icon?
 
 ## Build
@@ -38,10 +38,10 @@
 
 ## The rest
 [ ] Set current logged in user into Store (jessica)
-[ ] Look up user data via username
+[X] Look up user data via username
 [X] New post modals
 [ ] Extract remaining icons
 [ ] Isotope integration - throw out CSS3 grid
 [ ] Extract hero navigation bars into a component
 [ ] Photo viewer modal
-[ ] Tidy up the 
+[ ] Icons on settings inputs
