@@ -137,12 +137,12 @@ $post-border-color--internal: #eef0f2;
 
 // List view...
 .posts-list--list-view {
+  .post-utils {
+    position: absolute;
+    top: $post-padding;
+    right: $post-padding;
+  }
   .post {
-    .post-utils {
-      position: absolute;
-      top: $post-padding;
-      right: $post-padding;
-    }
     &.post--has-photo:not(.post--has-replies) {
       .post-footer {
         // A post without replies

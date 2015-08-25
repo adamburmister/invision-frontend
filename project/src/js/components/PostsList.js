@@ -24,14 +24,10 @@ export default class PostsList extends React.Component {
 
   componentDidUpdate() {
     if(this.state.grid) {
-      // this.state.grid.reloadItems();
-      // this.state.grid.layout();
-
       let filter = '.post';
       if(this.props.filter) {
         filter = `.post--has-${this.props.filter}`;
       }
-
       this.state.grid.arrange({ filter: filter });
     }
   }
@@ -51,8 +47,7 @@ export default class PostsList extends React.Component {
     let grid = new Isotope(el, {
       itemSelector: '.post',
       percentPosition: true,
-      transitionDuration: '0.2s',
-      // layoutMode: 'fitColumns',
+      transitionDuration: '0.2s'
     });
 
     // Images are loading still, so layout once loaded

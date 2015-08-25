@@ -123,20 +123,18 @@ class Post extends React.Component {
     }
 
     return (
-      <div>
-        <article className={cssClasses.join(' ')}>
-          <div className="post-padding">
-            {this.renderContent(data)}
+      <article className={cssClasses.join(' ')}>
+        <div className="post-padding">
+          {this.renderContent(data)}
 
-            <div className="post-footer">
-              {optionalExpandToggleEl}
-              {this.renderPostUtils(data.age)}
-            </div>
+          <div className="post-footer">
+            {optionalExpandToggleEl}
+            {this.renderPostUtils(data.age)}
           </div>
+        </div>
 
-          {this.renderReplies(data.replies)}
-        </article>
-      </div>
+        {this.renderReplies(data.replies)}
+      </article>
     )
   }
 

@@ -1,6 +1,6 @@
-$border-box-sizing: true !global;
-$visual-grid: true;
-$visual-grid-index: front;
+// $border-box-sizing: true !global;
+// $visual-grid: true;
+// $visual-grid-index: front;
 
 @import "bourbon";
 @import "grid-settings";
@@ -15,6 +15,7 @@ $visual-grid-index: front;
 @import "layout";
 @import "components/PageNav";
 @import "components/Hero";
+@import "components/PostsHero";
 @import "components/PostsList";
 @import "components/PostsListViewSwitcher";
 @import "components/Post";
