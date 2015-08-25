@@ -19,7 +19,7 @@ var deploy = require('gulp-gh-pages');
 
 // One build task to rule them all.
 gulp.task('build', function (done) {
-  runSeq('clean', ['buildsass', 'buildimg', 'buildjs'], 'buildhtml', 'deploy', done);
+  runSeq('clean', ['buildsass', 'buildimg', 'buildjs', 'copyfonts'], 'buildhtml', 'deploy', done);
 });
 
 var sassOptions = {
@@ -36,7 +36,12 @@ gulp.task('buildsass', function () {
   	.pipe(rename({
   		suffix: '.min'
   	}))
-    .pipe(gulp.dest(global.paths.dist));
+    .pipe(gulp.dest(global.paths.dist + '/css'));
+});
+
+gulp.task('copyfonts', function(){
+  return gulp.src(global.paths.fonts)
+    .pipe(gulp.dest(global.paths.dist + '/fonts'));
 });
 
 // Build JS for distribution.
@@ -54,8 +59,8 @@ gulp.task('buildjs', function () {
 // Build HTML for distribution.
 gulp.task('buildhtml', function () {
   return gulp.src(global.paths.html)
-    .pipe(replace('css/app.css', 'app.min.css'))
-    .pipe(replace('lib/system.js', 'app.min.js'))
+    .pipe(replace('css/app.css', 'css/app.min.css'))
+    .pipe(replace('lib/system.js', 'js/app.min.js'))
     .pipe(replace('<script src="config.js"></script>', ''))
     .pipe(replace("<script>System.import('./js/app')</script>", ''))
     .pipe(minifyHtml())

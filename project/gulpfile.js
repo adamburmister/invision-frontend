@@ -12,6 +12,7 @@ global.paths = {
   'src': './src',
   // Compiled CSS folder
   'css': './src/css',
+  'fonts': './src/fonts/{*,**/*}',
   'dist': './dist'
 };
 
