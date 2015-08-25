@@ -15,10 +15,11 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var neat = require('node-neat').includePaths;
 var bourbon = require('node-bourbon').includePaths;
+var deploy = require('gulp-gh-pages');
 
 // One build task to rule them all.
 gulp.task('build', function (done) {
-  runSeq('clean', ['buildsass', 'buildimg', 'buildjs'], 'buildhtml', done);
+  runSeq('clean', ['buildsass', 'buildimg', 'buildjs'], 'buildhtml', 'deploy', done);
 });
 
 var sassOptions = {
@@ -70,4 +71,10 @@ gulp.task('buildimg', function () {
       use: [pngquant()]
     }))
     .pipe(gulp.dest(global.paths.dist + '/img'));
+});
+
+// Push to gh-pages
+gulp.task('deploy', function () {
+  return gulp.src(global.paths.dist + '/**/*')
+    .pipe(deploy())
 });

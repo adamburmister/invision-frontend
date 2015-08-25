@@ -1,5 +1,13 @@
 # Work Log
 
+## Sunday, Monday
+
+- Set up Isotope to deal with the grid and filters
+
+- Continuing to learn React practices
+
+- Modal developed (although a bit flakey for large photo viewing - i'd fix that if I had time)
+
 ## Friday
 
 - Long week of work, now onto this :)
