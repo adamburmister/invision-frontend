@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router';
+import Icon from './Icon';
 
 /* From Modernizr */
 function whichTransitionEvent(){
@@ -58,10 +60,10 @@ class Post extends React.Component {
 
     return (
       <div className="post-content">{/* not happy about extra element */}
-        <a href={data.author.handle} rel="author" className="post-author">
+        <Link to={`/profile/${data.author.handle}`} rel="author" className="post-author">
           <img src={data.author.avatarUrl} className="avatar" width="40" height="40" />
           {data.author.name}
-        </a>
+        </Link>
 
         <div className="post-text" dangerouslySetInnerHTML={{ __html: data.content.text }}></div>
 
@@ -82,10 +84,10 @@ class Post extends React.Component {
     return (
       <div className="post-utils">
         <a href="#reply" onClick={(e) => this.handleExpandToggleClick(e)}>
-          <img src="/img/icons/reply.svg" width="13" height="13" />
+          <Icon type="reply" />
         </a>
         <a href="#like" onClick={(e) => this.handleLikeClick(e)}>
-          <img src="/img/icons/like.svg" width="13" height="13" />
+          <Icon type="heart" className="like" />
         </a>
         <time className="post-age" datetime="2011-07-22T13:59:47-04:00">{age}</time>
       </div>

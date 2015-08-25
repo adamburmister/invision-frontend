@@ -1,6 +1,7 @@
 import React from 'react/addons';
 import { Link } from 'react-router';
 let {LinkedStateMixin} = React.addons
+import Icon from './Icon';
 
 class SettingsForm extends React.Component {
 
@@ -10,10 +11,8 @@ class SettingsForm extends React.Component {
       name: "Jessica Tuan",
       email: "jessica@mail.com",
       password: "password1",
-      notifications: {
-        emailWhenPostIsFavourited: true,
-        emailWhenPostIsMentioned: true,
-      }
+      emailWhenPostIsFavourited: true,
+      emailWhenPostIsMentioned: true,
     };
   }
 
@@ -28,10 +27,10 @@ class SettingsForm extends React.Component {
     this.setState({ password: event.target.value });
   }
   setEmailWhenPostIsFavourited(event) {
-    this.setState({ emailWhenPostIsFavourited: event.target.checked });
+    this.setState({ emailWhenPostIsFavourited: !this.state.emailWhenPostIsFavourited });
   }
   setEmailWhenPostIsMentioned(event) {
-    this.setState({ emailWhenPostIsMentioned: event.target.checked });
+    this.setState({ emailWhenPostIsMentioned: !this.state.emailWhenPostIsMentioned });
   }
 
   render() {
@@ -65,7 +64,7 @@ class SettingsForm extends React.Component {
           <div className="checkbox">
             <div className="toggle-switch">
               <input type="checkbox" id="emailWhenPostIsFavourited"
-                      checked={this.state.notifications.emailWhenPostIsFavourited}
+                      checked={this.state.emailWhenPostIsFavourited}
                       onChange={this.setEmailWhenPostIsFavourited.bind(this)} />
               <label htmlFor="emailWhenPostIsFavourited"></label>
             </div>
@@ -75,7 +74,7 @@ class SettingsForm extends React.Component {
           <div className="checkbox">
             <div className="toggle-switch">
               <input type="checkbox" id="check2"
-                      checked={this.state.notifications.emailWhenPostIsMentioned}
+                      checked={this.state.emailWhenPostIsMentioned}
                       onChange={this.setEmailWhenPostIsMentioned.bind(this)} />
               <label htmlFor="check2"></label>
             </div>
@@ -84,7 +83,7 @@ class SettingsForm extends React.Component {
 
           <div className="checkbox">
             <div className="toggle-switch">
-              <input type="checkbox" id="check3" />
+              <input type="checkbox" id="check3" defaultChecked />
               <label htmlFor="check3"></label>
             </div>
             <label htmlFor="check3">email me when I get a reply</label>
@@ -92,7 +91,7 @@ class SettingsForm extends React.Component {
 
           <div className="checkbox">
             <div className="toggle-switch">
-              <input type="checkbox" id="check4" />
+              <input type="checkbox" id="check4" defaultChecked />
               <label htmlFor="check4"></label>
             </div>
             <label htmlFor="check4">email me when someone follows me</label>
@@ -118,7 +117,7 @@ class SettingsForm extends React.Component {
 
           <div className="checkbox">
             <div className="toggle-switch">
-              <input type="checkbox" id="check5" />
+              <input type="checkbox" id="check5" defaultChecked/>
               <label htmlFor="check5"></label>
             </div>
             <label htmlFor="check5">add a location to my posts</label>
@@ -126,7 +125,7 @@ class SettingsForm extends React.Component {
 
           <div className="checkbox">
             <div className="toggle-switch">
-              <input type="checkbox" id="check6" />
+              <input type="checkbox" id="check6" defaultChecked/>
               <label htmlFor="check6"></label>
             </div>
             <label htmlFor="check6">let others find me by email address</label>
@@ -134,7 +133,7 @@ class SettingsForm extends React.Component {
 
           <div className="checkbox">
             <div className="toggle-switch">
-              <input type="checkbox" id="check7" />
+              <input type="checkbox" id="check7" defaultChecked/>
               <label htmlFor="check7"></label>
             </div>
             <label htmlFor="check7">tailor adds by my information</label>

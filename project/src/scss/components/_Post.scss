@@ -136,10 +136,20 @@ $post-border-color--internal: #eef0f2;
       padding: 0 15px;
       border-radius: 5px;
       font-size: 14px;
+      &:focus {
+        color: $body-color;
+      }
     }
   }
 
 
+  &--liked {
+    svg.like {
+      path {
+        stroke: $link-color--primary;
+      }
+    }
+  }
 }
 
 // List view...
