@@ -21,7 +21,7 @@
 @import "components/Post";
 @import "components/PageFooter";
 @import "components/Modal";
-@import "components/NewPost";
+@import "components/NewPostModalBody";
 @import "components/ToggleSwitch";
 @import "components/PostAttachment";
 @import "components/PostPhoto";
@@ -34,6 +34,10 @@ body {
   padding: 0;
   margin: 0;
   margin-top: $page-nav-height;
+}
+
+img {
+  border: 0;
 }
 
 p {

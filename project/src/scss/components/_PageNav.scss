@@ -155,6 +155,7 @@ $page-nav-padding: 12px;
     vertical-align: top;
     @include transition(border-color 0.2s ease-in 0s);
     &:focus, &:active {
+      color: #fff;
       border-color: #ccc;
     }
 

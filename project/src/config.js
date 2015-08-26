@@ -19,10 +19,12 @@ System.config({
   "map": {
     "babel": "npm:babel-core@5.5.6",
     "babel-runtime": "npm:babel-runtime@5.5.6",
+    "chemerisuk/better-placeholder-polyfill": "github:chemerisuk/better-placeholder-polyfill@1.3.0",
     "core-js": "npm:core-js@0.9.15",
     "isotope": "npm:isotope@0.3.2",
     "isotope-fit-columns": "npm:isotope-fit-columns@1.1.2",
     "isotope-layout": "npm:isotope-layout@2.2.2",
+    "jamesallardice/Placeholders.js": "github:jamesallardice/Placeholders.js@4.0.1",
     "nmn/react-timeago": "github:nmn/react-timeago@master",
     "pixi.js": "npm:pixi.js@3.0.6",
     "react": "npm:react@0.14.0-beta3",

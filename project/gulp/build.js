@@ -75,6 +75,6 @@ gulp.task('buildimg', function () {
 
 // Push to gh-pages
 gulp.task('deploy', function () {
-  return gulp.src(global.paths.dist + '/**/*')
+  gulp.src(global.paths.dist + '/*')
     .pipe(deploy())
 });

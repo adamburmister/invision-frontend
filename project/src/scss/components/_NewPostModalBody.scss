@@ -1,0 +1,15 @@
+.new-post-modal-body {
+  h4 {
+    margin: 0;
+  }
+  &__text {
+    height: 90px;
+    width: 100%;
+  }
+  .post-attachment {
+    line-height: 35px;
+  }
+  &__btnpost {
+    padding: 8px 24px;
+  }
+}
