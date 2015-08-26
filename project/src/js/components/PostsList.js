@@ -33,19 +33,20 @@ export default class PostsList extends React.Component {
   }
 
   initGrid() {
-    console.log('PostsList::initGrid');
+    //console.log('PostsList::initGrid');
     if(this.state.grid) {
-      console.log('PostsList::initGrid - reloading items');
+      //console.log('PostsList::initGrid - reloading items');
 
       this.state.grid.reloadItems();
       return;
     }
 
-    console.log('PostsList::initGrid - creating grid');
+    //console.log('PostsList::initGrid - creating grid');
 
     let el = ReactDOM.findDOMNode(this.refs.postList);
     let grid = new Isotope(el, {
       itemSelector: '.post',
+      stamp: '.stamp',
       percentPosition: true,
       transitionDuration: '0.2s'
     });
@@ -62,23 +63,33 @@ export default class PostsList extends React.Component {
 
   destroyGrid() {
     if(this.state.grid) {
-      console.log('PostsList::destroyGrid');
+      //console.log('PostsList::destroyGrid');
       this.state.grid.destroy();
       this.setState({ grid: null });
     }
   }
 
-  onExpanded() {
-    console.log('PostsList::onExpanded');
-    if(this.state.grid) this.state.grid.layout();
-    // this.grid.unstamp(this.expandedPostEl);
+  onBeforeExpand(postDomEl) {
+    //console.log('PostsList::onBeforeExpand', postDomEl);
+
+    let postHeight = postDomEl.offsetHeight;
+    let collapsibleContentHeight = Array
+      .from(postDomEl.querySelector('.post-collapsible').children)
+      .reduce((total, el) => { return total += el.offsetHeight; }, 0);
+    postDomEl.querySelector('.post-inner-wrapper').style.height = `${(postHeight + collapsibleContentHeight)}px`;
+    this.state.grid && this.state.grid.layout();
   }
 
-  onBeforeExpand(postDomEl) {
-    console.log('PostsList::onBeforeExpand', postDomEl);
-    this.expandedPostEl = postDomEl;
-    // this.grid.stamp(this.expandedPostEl);
-    if(this.grid) this.grid.layout();
+  onBeforeCollapse(postDomEl) {
+    //console.log('onBeforeCollapse', postDomEl);
+    let postHeight = postDomEl.querySelector('.post-padding').offsetHeight;
+    postDomEl.querySelector('.post-inner-wrapper').style.height = `${postHeight}px`;
+    // this.state.grid && this.state.grid.layout();
+  }
+
+  onAnimDone() {
+    //console.log('PostsList::onAnimDone');
+    this.state.grid && this.state.grid.layout();
   }
 
   render() {
@@ -96,7 +107,8 @@ export default class PostsList extends React.Component {
           return (<Post key={post.id}
                         data={post}
                         onBeforeExpand={this.onBeforeExpand.bind(this)}
-                        onExpanded={this.onExpanded.bind(this)} />)
+                        onBeforeCollapse={this.onBeforeCollapse.bind(this)}
+                        onAnimDone={this.onAnimDone.bind(this)} />)
         })}
       </section>
     )

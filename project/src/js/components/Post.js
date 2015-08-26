@@ -36,16 +36,23 @@ class Post extends React.Component {
     /* Listen for a transition! */
     TRANSITION_EVENT && postCollapsibleEl.addEventListener(TRANSITION_EVENT, (e) => {
       if(e.propertyName === 'max-height') {
-        this.props.onExpanded(this);
+        this.props.onAnimDone(this);
       }
     });
   }
 
   handleExpandToggleClick(e) {
-    this.props.onBeforeExpand(ReactDOM.findDOMNode(this));
     e.preventDefault();
+
+    let el = ReactDOM.findDOMNode(this);
+    if(this.state.isCollapsed) {
+      this.props.onBeforeExpand(el);
+    } else {
+      this.props.onBeforeCollapse(el);
+    }
+
     this.setState({ isCollapsed: !this.state.isCollapsed });
-    // this.props.onExpanded(this); will be triggered by the transition event in componentDidMount
+    // this.props.onAnimDone(this); will be triggered by the transition event in componentDidMount
   }
 
   handleLikeClick(e) {
@@ -124,16 +131,18 @@ class Post extends React.Component {
 
     return (
       <article className={cssClasses.join(' ')}>
-        <div className="post-padding">
-          {this.renderContent(data)}
+        <div className="post-inner-wrapper">
+          <div className="post-padding">
+            {this.renderContent(data)}
 
-          <div className="post-footer">
-            {optionalExpandToggleEl}
-            {this.renderPostUtils(data.age)}
+            <div className="post-footer">
+              {optionalExpandToggleEl}
+              {this.renderPostUtils(data.age)}
+            </div>
           </div>
-        </div>
 
-        {this.renderReplies(data.replies)}
+          {this.renderReplies(data.replies)}
+        </div>
       </article>
     )
   }
@@ -143,7 +152,8 @@ class Post extends React.Component {
 Post.propTypes = {
   data: React.PropTypes.object,
   onBeforeExpand: React.PropTypes.func,
-  onExpanded: React.PropTypes.func,
+  onBeforeCollapse: React.PropTypes.func,
+  onAnimDone: React.PropTypes.func,
   isCollapsed: React.PropTypes.bool
 };
 
@@ -151,7 +161,8 @@ Post.defaultProps = {
   data: {},
   isCollapsed: true,
   onBeforeExpand: () => {},
-  onExpanded: () => {}
+  onBeforeCollapse: () => {},
+  onAnimDone: () => {}
 };
 
 export default Post;
