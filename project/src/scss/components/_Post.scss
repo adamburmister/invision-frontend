@@ -89,7 +89,6 @@ $post-border-color--internal: #eef0f2;
     border-top: 1px solid $post-border-color--internal;
     // Keep it shut, but use max-height so we can transition it
     max-height: 0;
-	  overflow: hidden;
     opacity: 0;
     @include transition(max-height 0.2s ease-in 0s, opacity 0.2s ease-in 0s);
   }
@@ -98,7 +97,7 @@ $post-border-color--internal: #eef0f2;
     .post-collapsible {
       opacity: 1;
       max-height: 350px; // in production this wouldn't work well because of timing delays
-      overflow: scroll;
+      overflow: visible;
     }
   }
 

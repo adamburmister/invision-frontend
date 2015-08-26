@@ -7,8 +7,8 @@
 [X] Semantic HTML for Settings
 [X] Semantic HTML for Create new message Modal
 [X] Semantic HTML for Profile / Feed
-[ ] Semantic HTML for Profile / Followers
-[ ] Semantic HTML for Profile / Following
+[-] Semantic HTML for Profile / Followers
+[-] Semantic HTML for Profile / Following
 
 ## Sass
 [X] Sass variables file
@@ -46,3 +46,4 @@
 [X] Photo viewer modal
 [ ] Icons on settings inputs
 [ ] Extract strings to constants (view type, filter type)
+[ ] After Isotope rearrange wait for images and then relayout

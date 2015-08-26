@@ -7,11 +7,12 @@ global.paths = {
   'html': './src/*.html',
   'js': './src/js/**/*.js',
   'sass': './src/scss/**/*.scss',
-  'img': './src/img/*',
+  'img': './src/img/{*,**/*}',
   // Sources folder
   'src': './src',
   // Compiled CSS folder
   'css': './src/css',
+  'fonts': './src/fonts/{*,**/*}',
   'dist': './dist'
 };
 
