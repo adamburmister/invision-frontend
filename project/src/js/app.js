@@ -1,15 +1,18 @@
+window.__DEV__ = true;
+
 // Frameworks
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, applyMiddleware, combineReducers} from 'redux';
-import {Provider} from 'react-redux';
 import {Router, Route, Redirect} from 'react-router';
 import {history} from 'react-router/lib/HashHistory';
 
-// Redux support
-import * as reducers from './reducers/index';
+// Redux
+import {createStore, applyMiddleware, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
+
+import postsReducer from './reducers/posts';
 
 // Views and Components
 import Layout from './views/layout';
@@ -18,10 +21,10 @@ import Settings from './views/settings';
 import Profile from './views/profile';
 
 // Setup utils
-const reducersApp = combineReducers(reducers);
+const reducer = combineReducers([postsReducer]);
 const logger = createLogger({ level: 'info' });
 const createStoreWithMiddleware = applyMiddleware(logger, thunkMiddleware)(createStore);
-const store = createStoreWithMiddleware(reducersApp);
+const store = createStoreWithMiddleware(reducer);
 
 // Routing
 class App extends React.Component {

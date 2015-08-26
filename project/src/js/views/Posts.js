@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
 import PostsListViewSwitcher from '../components/PostsListViewSwitcher';
 import PostsHero from '../components/PostsHero';
@@ -12,6 +13,7 @@ class Posts extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       view: 'list',
       filter: null

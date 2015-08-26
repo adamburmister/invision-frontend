@@ -25,6 +25,7 @@ System.config({
     "isotope-fit-columns": "npm:isotope-fit-columns@1.1.2",
     "isotope-layout": "npm:isotope-layout@2.2.2",
     "jamesallardice/Placeholders.js": "github:jamesallardice/Placeholders.js@4.0.1",
+    "lodash": "npm:lodash@3.10.1",
     "nmn/react-timeago": "github:nmn/react-timeago@master",
     "pixi.js": "npm:pixi.js@3.0.6",
     "react": "npm:react@0.14.0-beta3",
@@ -34,6 +35,7 @@ System.config({
     "react-router": "npm:react-router@1.0.0-beta3",
     "react-timeago": "npm:react-timeago@2.2.1",
     "redux": "npm:redux@1.0.1",
+    "redux-devtools": "npm:redux-devtools@1.1.2",
     "redux-logger": "npm:redux-logger@1.0.5",
     "redux-react-router": "npm:redux-react-router@0.4.0",
     "redux-thunk": "npm:redux-thunk@0.1.0",
@@ -564,6 +566,14 @@ System.config({
       "fbjs": "npm:fbjs@0.1.0-alpha.4",
       "react": "npm:react@0.14.0-beta3"
     },
+    "npm:react-json-tree@0.1.3": {
+      "react": "npm:react@0.14.0-beta3",
+      "react-mixin": "npm:react-mixin@1.7.0"
+    },
+    "npm:react-mixin@1.7.0": {
+      "object-assign": "npm:object-assign@2.1.1",
+      "smart-mixin": "npm:smart-mixin@1.2.1"
+    },
     "npm:react-modal@0.3.0": {
       "classnames": "npm:classnames@2.1.3",
       "element-class": "npm:element-class@0.2.2",
@@ -614,6 +624,12 @@ System.config({
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31",
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:redux-devtools@1.1.2": {
+      "react-json-tree": "npm:react-json-tree@0.1.3",
+      "react-mixin": "npm:react-mixin@1.7.0",
+      "react-redux": "npm:react-redux@0.9.0",
+      "redux": "npm:redux@1.0.0-rc"
     },
     "npm:redux@1.0.0-rc": {
       "invariant": "npm:invariant@2.1.0",
