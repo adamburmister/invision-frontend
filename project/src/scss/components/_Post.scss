@@ -9,17 +9,16 @@ $post-border-color--internal: #eef0f2;
 .post {
   position: relative;
   border: 1px solid $post-border-color;
-  border-radius: 5px;
   background-color: #fff;
   overflow: hidden;
   margin-bottom: 25px;
   word-break: break-word;
   -webkit-font-smoothing: antialiased;
-
   color: $gray;
   font-size: $body-font-size;
   font-family: $font-family-open-sans;
   line-height: 24px;
+  border-radius: 5px;
 
   a {
     color: $post-link-color;
@@ -154,6 +153,12 @@ $post-border-color--internal: #eef0f2;
       }
     }
   }
+}
+
+// Fix a very weird IE9 bug which only occurs when there's a border radius
+// on a parent of a position:fixed element
+html.ie9 .post {
+  border-radius: 0;
 }
 
 // List view...
