@@ -4,6 +4,8 @@ import { Link } from 'react-router';
 import Icon from './Icon';
 import PostContent from './PostContent';
 
+const isIE9 = document.getElementsByTagName('html')[0].className == 'ie9';
+
 /* From Modernizr */
 function whichTransitionEvent(){
     var t;
@@ -51,7 +53,15 @@ class Post extends React.Component {
       this.props.onBeforeCollapse(el);
     }
 
-    this.setState({ isCollapsed: !this.state.isCollapsed });
+    const isCollapsed = !this.state.isCollapsed;
+
+    this.setState({ isCollapsed: isCollapsed });
+
+    if(isIE9) {
+      setTimeout(() => {
+        this.props.onAnimDone(isCollapsed, ReactDOM.findDOMNode(this));
+      }, 0);
+    }
     // this.props.onAnimDone(this); will be triggered by the transition event in componentDidMount
   }
 

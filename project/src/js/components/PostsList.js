@@ -8,6 +8,7 @@ import Isotope from 'isotope-layout';
 import FitColumns from 'isotope-fit-columns';
 
 const POST_WRAPPER = '.post-inner-wrapper';
+const isIE9 = document.getElementsByTagName('html')[0].className == 'ie9';
 
 export default class PostsList extends React.Component {
 
@@ -61,7 +62,7 @@ export default class PostsList extends React.Component {
         this.state.grid.layout(); // in reality we would only want to do this once
       }
     }
-
+    
     this.setState({ grid: grid });
   }
 
