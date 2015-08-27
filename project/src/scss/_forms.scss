@@ -75,20 +75,20 @@ fieldset + .button-footer {
 
 // Fancy checkbox
 .checkbox {
+  position: relative;
   width: 100%;
   overflow: hidden;
   margin-bottom: 20px;
   line-height: 27px;
+  padding-left: 70px;
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  > label, .toggle-switch {
-    float: left;
-  }
-  >label {
-    margin-left: 25px;
+  .toggle-switch {
+    position: absolute;
+    margin-left: -70px;
   }
 }
 

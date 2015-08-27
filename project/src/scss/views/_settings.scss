@@ -21,8 +21,13 @@
 
   &__avatar {
     width: 85px;
-    margin-right: 50px;
+    margin: 0 50px 20px 0;
     float: left;
+
+    @include media($phone-landscape-down) {
+      margin-right: 0;
+      float: none;
+    }
 
     &__btn-change {
       border: 1px solid $icon-color;
@@ -38,6 +43,10 @@
     margin-left: 135px;
     margin-right: 40px;
 
+    @include media($phone-landscape-down) {
+      margin: 0;
+    }
+
     &__name,
     &__email,
     &__password {
@@ -48,6 +57,7 @@
         font-size: $h4-font-size;
         height: 40px;
         padding-left: 40px;
+        // TODO: Simple bg image for icon
       }
     }
   }
