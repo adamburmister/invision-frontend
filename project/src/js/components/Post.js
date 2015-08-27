@@ -57,10 +57,10 @@ class Post extends React.Component {
 
     this.setState({ isCollapsed: isCollapsed });
 
+    // Hackery! IE9 doesn't support transitions, so the event won't trigger, instead
+    // let's just do this callback at the end of the callstack
     if(isIE9) {
-      setTimeout(() => {
-        this.props.onAnimDone(isCollapsed, ReactDOM.findDOMNode(this));
-      }, 0);
+      setTimeout(() => { this.props.onAnimDone(isCollapsed, ReactDOM.findDOMNode(this)); }, 0);
     }
     // this.props.onAnimDone(this); will be triggered by the transition event in componentDidMount
   }
