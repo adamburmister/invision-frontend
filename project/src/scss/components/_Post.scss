@@ -102,7 +102,11 @@ $post-border-color--internal: #eef0f2;
   }
 
   .post-reply {
+    background-color: #f9fafb;
     border-bottom: 1px solid $post-border-color--internal;
+    &:first-child {
+      border-top: 1px solid $post-border-color--internal;
+    }
   }
 
   .post-reply-form {

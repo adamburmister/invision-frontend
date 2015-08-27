@@ -7,6 +7,8 @@ import { Link } from 'react-router';
 import Isotope from 'isotope-layout';
 import FitColumns from 'isotope-fit-columns';
 
+const POST_WRAPPER = '.post-inner-wrapper';
+
 export default class PostsList extends React.Component {
 
   constructor(props) {
@@ -22,8 +24,10 @@ export default class PostsList extends React.Component {
     this.destroyGrid();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     if(this.state.grid) {
+      this.state.grid.once('arrangeComplete', this.state.grid.layout);
+
       let filter = '.post';
       if(this.props.filter) {
         filter = `.post--has-${this.props.filter}`;
@@ -36,7 +40,6 @@ export default class PostsList extends React.Component {
     console.log('PostsList::initGrid');
     if(this.state.grid) {
       console.log('PostsList::initGrid - reloading items');
-
       this.state.grid.reloadItems();
       return;
     }
@@ -46,6 +49,7 @@ export default class PostsList extends React.Component {
     let el = ReactDOM.findDOMNode(this.refs.postList);
     let grid = new Isotope(el, {
       itemSelector: '.post',
+      stamp: '.stamp',
       percentPosition: true,
       transitionDuration: '0.2s'
     });
@@ -53,7 +57,8 @@ export default class PostsList extends React.Component {
     // Images are loading still, so layout once loaded
     for(let img of el.querySelectorAll('.post img:not([height])')) {
       img.onload = () => {
-        this.state.grid.layout();
+        console.log('image loaded, re-layout grid');
+        this.state.grid.layout(); // in reality we would only want to do this once
       }
     }
 
@@ -62,23 +67,31 @@ export default class PostsList extends React.Component {
 
   destroyGrid() {
     if(this.state.grid) {
-      console.log('PostsList::destroyGrid');
       this.state.grid.destroy();
       this.setState({ grid: null });
     }
   }
 
-  onExpanded() {
-    console.log('PostsList::onExpanded');
-    if(this.state.grid) this.state.grid.layout();
-    // this.grid.unstamp(this.expandedPostEl);
+  onBeforeExpand(postDomEl) {
+    let postHeight = postDomEl.offsetHeight;
+    let collapsibleContentHeight = Array
+      .from(postDomEl.querySelector('.post-collapsible').children)
+      .reduce((total, el) => { return total += el.offsetHeight; }, 0);
+    postDomEl.querySelector(POST_WRAPPER).style.height = `${(postHeight + collapsibleContentHeight)}px`;
+    this.state.grid && this.state.grid.layout();
   }
 
-  onBeforeExpand(postDomEl) {
-    console.log('PostsList::onBeforeExpand', postDomEl);
-    this.expandedPostEl = postDomEl;
-    // this.grid.stamp(this.expandedPostEl);
-    if(this.grid) this.grid.layout();
+  onBeforeCollapse(postDomEl) {
+    let postHeight = postDomEl.querySelector('.post-padding').offsetHeight;
+    postDomEl.querySelector(POST_WRAPPER).style.height = `${postHeight}px`;
+  }
+
+  // Called after a CSS animation is completed
+  onAnimDone(isCollapsed, postDomEl) {
+    if(!isCollapsed) {
+      postDomEl.querySelector(POST_WRAPPER).style.height = 'auto';
+    }
+    this.state.grid && this.state.grid.layout();
   }
 
   render() {
@@ -96,7 +109,8 @@ export default class PostsList extends React.Component {
           return (<Post key={post.id}
                         data={post}
                         onBeforeExpand={this.onBeforeExpand.bind(this)}
-                        onExpanded={this.onExpanded.bind(this)} />)
+                        onBeforeCollapse={this.onBeforeCollapse.bind(this)}
+                        onAnimDone={this.onAnimDone.bind(this)} />)
         })}
       </section>
     )

@@ -5,7 +5,7 @@ $modal-close-button-size: 21px;
 $modal-close-button-color: $gray;
 
 .modal-bg {
-  position: absolute;
+  position: fixed; // TODO: IE9 issue, may have to move to body level
   top: 0;
   left: 0;
   right: 0;
