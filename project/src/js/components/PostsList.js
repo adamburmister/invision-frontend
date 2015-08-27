@@ -7,6 +7,8 @@ import { Link } from 'react-router';
 import Isotope from 'isotope-layout';
 import FitColumns from 'isotope-fit-columns';
 
+const POST_WRAPPER = '.post-inner-wrapper';
+
 export default class PostsList extends React.Component {
 
   constructor(props) {
@@ -65,36 +67,30 @@ export default class PostsList extends React.Component {
 
   destroyGrid() {
     if(this.state.grid) {
-      console.log('PostsList::destroyGrid');
       this.state.grid.destroy();
       this.setState({ grid: null });
     }
   }
 
   onBeforeExpand(postDomEl) {
-    console.log('PostsList::onBeforeExpand', postDomEl);
-
     let postHeight = postDomEl.offsetHeight;
     let collapsibleContentHeight = Array
       .from(postDomEl.querySelector('.post-collapsible').children)
       .reduce((total, el) => { return total += el.offsetHeight; }, 0);
-    postDomEl.querySelector('.post-inner-wrapper').style.height = `${(postHeight + collapsibleContentHeight)}px`;
+    postDomEl.querySelector(POST_WRAPPER).style.height = `${(postHeight + collapsibleContentHeight)}px`;
     this.state.grid && this.state.grid.layout();
   }
 
   onBeforeCollapse(postDomEl) {
-    console.log('onBeforeCollapse', postDomEl);
     let postHeight = postDomEl.querySelector('.post-padding').offsetHeight;
-    postDomEl.querySelector('.post-inner-wrapper').style.height = `${postHeight}px`;
-    // this.state.grid && this.state.grid.layout();
+    postDomEl.querySelector(POST_WRAPPER).style.height = `${postHeight}px`;
   }
 
+  // Called after a CSS animation is completed
   onAnimDone(isCollapsed, postDomEl) {
-    console.log('PostsList::onAnimDone');
     if(!isCollapsed) {
-      postDomEl.querySelector('.post-inner-wrapper').style.height = 'auto';
+      postDomEl.querySelector(POST_WRAPPER).style.height = 'auto';
     }
-
     this.state.grid && this.state.grid.layout();
   }
 
