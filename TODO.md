@@ -49,5 +49,5 @@
 [ ] Icons on settings inputs
 [ ] Extract strings to constants (view type, filter type)
 [X] After Isotope rearrange wait for images and then relayout
-[ ] Make settings Responsive
-[ ] IE9 modal fix
+[X] Make settings Responsive
+[X] IE9 modal fix
