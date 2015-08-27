@@ -1,5 +1,3 @@
-window.__DEV__ = true;
-
 // Frameworks
 import React from 'react';
 import ReactDOM from 'react-dom';
