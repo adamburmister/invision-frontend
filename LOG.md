@@ -1,5 +1,13 @@
 # Work Log
 
+## Tuesday, Wednesay
+
+- Fleshing out the React side, getting Isotope to bend to my will, and trying
+  to understand and implement a Redux flow.
+
+- IE9 testing and fixes. Found a bug around the modal, and lack of placeholder
+  support (fixed with a JS lib).
+
 ## Sunday, Monday
 
 - Set up Isotope to deal with the grid and filters

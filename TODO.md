@@ -36,14 +36,18 @@
 [X] Router for Posts and Settings
 [X] Add Photos, Videos views
 
-## The rest
+## redux
 [ ] Set current logged in user into Store (jessica)
+
+## The rest
 [X] Look up user data via username
 [X] New post modals
 [ ] Extract remaining icons
-[ ] Isotope integration - throw out CSS3 grid
+[X] Isotope integration - throw out CSS3 grid
 [ ] Extract hero navigation bars into a component
 [X] Photo viewer modal
 [ ] Icons on settings inputs
 [ ] Extract strings to constants (view type, filter type)
-[ ] After Isotope rearrange wait for images and then relayout
+[X] After Isotope rearrange wait for images and then relayout
+[ ] Make settings Responsive
+[ ] IE9 modal fix

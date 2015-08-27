@@ -83,7 +83,7 @@ class Post extends React.Component {
         <a href="#like" onClick={(e) => this.handleLikeClick(e)}>
           <Icon type="heart" className="like" />
         </a>
-        <time className="post-age" datetime="2011-07-22T13:59:47-04:00">{age}</time>
+        <time className="post-age" dateTime="2011-07-22T13:59:47-04:00">{age}</time>
       </div>
     );
   }
@@ -116,10 +116,11 @@ class Post extends React.Component {
     }
     if(data.replies.length) {
       cssClasses.push('post--has-replies');
+      let expandText = this.state.isCollapsed ? (<div>Expand <span className="caret down"></span></div>) :
+                                                (<div>Collapse <span className="caret up"></span></div>);
       optionalExpandToggleEl = (
-        <a href="#" className="post-collapsible-toggle"
-            onClick={(e) => this.handleExpandToggleClick(e)}>
-            {this.state.isCollapsed ? 'Expand' : 'Collapse'} <span className="caret"></span>
+        <a href="#" className="post-collapsible-toggle" onClick={(e) => this.handleExpandToggleClick(e)}>
+          {expandText}
         </a>
       );
     }

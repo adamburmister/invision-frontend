@@ -78,6 +78,24 @@ $post-border-color--internal: #eef0f2;
 
   a.post-collapsible-toggle {
     font-size: 12px;
+    div {
+      float: left;
+    }
+    .caret {
+      display: inline-block;
+      float: right;
+      content: '';
+      margin-top: 10px;
+      margin-left: 5px;
+      &.up {
+        @include triangle(8px, $icon-color, up);
+        // padding-bottom: 4px;
+      }
+      &.down {
+        @include triangle(8px, $icon-color, down);
+        // padding-bottom: 2px;
+      }
+    }
     &:hover {
       color: $body-color;
     }
