@@ -36,7 +36,7 @@ class Post extends React.Component {
     /* Listen for a transition! */
     TRANSITION_EVENT && postCollapsibleEl.addEventListener(TRANSITION_EVENT, (e) => {
       if(e.propertyName === 'max-height') {
-        this.props.onAnimDone(this);
+        this.props.onAnimDone(this.state.isCollapsed, ReactDOM.findDOMNode(this));
       }
     });
   }

@@ -22,8 +22,10 @@ export default class PostsList extends React.Component {
     this.destroyGrid();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     if(this.state.grid) {
+      this.state.grid.once('arrangeComplete', this.state.grid.layout);
+
       let filter = '.post';
       if(this.props.filter) {
         filter = `.post--has-${this.props.filter}`;
@@ -33,15 +35,14 @@ export default class PostsList extends React.Component {
   }
 
   initGrid() {
-    //console.log('PostsList::initGrid');
+    console.log('PostsList::initGrid');
     if(this.state.grid) {
-      //console.log('PostsList::initGrid - reloading items');
-
+      console.log('PostsList::initGrid - reloading items');
       this.state.grid.reloadItems();
       return;
     }
 
-    //console.log('PostsList::initGrid - creating grid');
+    console.log('PostsList::initGrid - creating grid');
 
     let el = ReactDOM.findDOMNode(this.refs.postList);
     let grid = new Isotope(el, {
@@ -54,7 +55,8 @@ export default class PostsList extends React.Component {
     // Images are loading still, so layout once loaded
     for(let img of el.querySelectorAll('.post img:not([height])')) {
       img.onload = () => {
-        this.state.grid.layout();
+        console.log('image loaded, re-layout grid');
+        this.state.grid.layout(); // in reality we would only want to do this once
       }
     }
 
@@ -63,14 +65,14 @@ export default class PostsList extends React.Component {
 
   destroyGrid() {
     if(this.state.grid) {
-      //console.log('PostsList::destroyGrid');
+      console.log('PostsList::destroyGrid');
       this.state.grid.destroy();
       this.setState({ grid: null });
     }
   }
 
   onBeforeExpand(postDomEl) {
-    //console.log('PostsList::onBeforeExpand', postDomEl);
+    console.log('PostsList::onBeforeExpand', postDomEl);
 
     let postHeight = postDomEl.offsetHeight;
     let collapsibleContentHeight = Array
@@ -81,14 +83,18 @@ export default class PostsList extends React.Component {
   }
 
   onBeforeCollapse(postDomEl) {
-    //console.log('onBeforeCollapse', postDomEl);
+    console.log('onBeforeCollapse', postDomEl);
     let postHeight = postDomEl.querySelector('.post-padding').offsetHeight;
     postDomEl.querySelector('.post-inner-wrapper').style.height = `${postHeight}px`;
     // this.state.grid && this.state.grid.layout();
   }
 
-  onAnimDone() {
-    //console.log('PostsList::onAnimDone');
+  onAnimDone(isCollapsed, postDomEl) {
+    console.log('PostsList::onAnimDone');
+    if(!isCollapsed) {
+      postDomEl.querySelector('.post-inner-wrapper').style.height = 'auto';
+    }
+
     this.state.grid && this.state.grid.layout();
   }
 
