@@ -51,3 +51,4 @@
 [X] After Isotope rearrange wait for images and then relayout
 [X] Make settings Responsive
 [X] IE9 modal fix
+[ ] Page titles
