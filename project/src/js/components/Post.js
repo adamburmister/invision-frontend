@@ -67,8 +67,8 @@ class Post extends React.Component {
 
   handleLikeClick(e) {
     e.preventDefault();
-    // this.setState({ isLiked: !this.state.isLiked });
-    store.dispatch(likePost(this.data));
+    this.setState({ isLiked: !this.state.isLiked });
+    // store.dispatch(likePost(this.data));
   }
 
   renderContent(data) {
